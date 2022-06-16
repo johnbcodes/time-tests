@@ -1,0 +1,48 @@
+[package]
+name = "time-tests"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+debug = 1
+
+[[example]]
+name = "odt_first_attempt"
+[[example]]
+name = "odt_second_attempt"
+[[example]]
+name = "odt_third_attempt"
+
+[[example]]
+name = "pdt_first_attempt"
+[[example]]
+name = "pdt_second_attempt"
+[[example]]
+name = "pdt_third_attempt"
+
+[[example]]
+name = "time_first_attempt"
+[[example]]
+name = "time_second_attempt"
+[[example]]
+name = "time_third_attempt"
+
+[[bench]]
+name = "baseline"
+harness = false
+
+[[bench]]
+name = "my_bench"
+harness = false
+
+[dependencies]
+time = { version = "0.3", features = ["macros", "formatting", "parsing"] }
+
+[dev-dependencies]
+criterion = "0.3"
+dhat = "0.3"
+
+[features]
+default = ["third-attempt"]
+third-attempt = []
+dhat-heap = []
