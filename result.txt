@@ -1,120 +1,88 @@
-
-running 11 tests
-test tests::test_odt_first_attempt ... ignored
-test tests::test_odt_fourth_attempt ... ignored
-test tests::test_odt_second_attempt ... ignored
-test tests::test_odt_third_attempt ... ignored
-test tests::test_pdt_first_attempt ... ignored
-test tests::test_pdt_fourth_attempt ... ignored
-test tests::test_pdt_second_attempt ... ignored
-test tests::test_pdt_third_attempt ... ignored
-test tests::test_time_first_attempt ... ignored
-test tests::test_time_second_attempt ... ignored
-test tests::test_time_third_attempt ... ignored
-
-test result: ok. 0 passed; 0 failed; 11 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
 WARNING: HTML report generation will become a non-default optional feature in Criterion.rs 0.4.0.
 This feature is being moved to cargo-criterion (https://github.com/bheisler/cargo-criterion) and will be optional in a future version of Criterion.rs. To silence this warning, either switch to cargo-criterion or enable the 'html_reports' feature in your Cargo.toml.
 
-Benchmarking Time/H:M
-Benchmarking Time/H:M: Warming up for 3.0000 s
-Benchmarking Time/H:M: Collecting 100 samples in estimated 5.0000 s (111M iterations)
-Benchmarking Time/H:M: Analyzing
-Time/H:M                time:   [43.889 ns 44.096 ns 44.320 ns]
-                        change: [-1.2477% -0.5125% +0.1555%] (p = 0.15 > 0.05)
-                        No change in performance detected.
+Benchmarking Baseline/H:M
+Benchmarking Baseline/H:M: Warming up for 3.0000 s
+Benchmarking Baseline/H:M: Collecting 100 samples in estimated 5.0000 s (113M iterations)
+Benchmarking Baseline/H:M: Analyzing
+Baseline/H:M            time:   [43.678 ns 43.847 ns 44.035 ns]
+Found 13 outliers among 100 measurements (13.00%)
+  6 (6.00%) low mild
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+Benchmarking Baseline/H optional :M
+Benchmarking Baseline/H optional :M: Warming up for 3.0000 s
+Benchmarking Baseline/H optional :M: Collecting 100 samples in estimated 5.0000 s (103M iterations)
+Benchmarking Baseline/H optional :M: Analyzing
+Baseline/H optional :M  time:   [48.015 ns 48.178 ns 48.347 ns]
 Found 8 outliers among 100 measurements (8.00%)
-  2 (2.00%) low mild
-  6 (6.00%) high mild
-Benchmarking Time/H optional :M
-Benchmarking Time/H optional :M: Warming up for 3.0000 s
-Benchmarking Time/H optional :M: Collecting 100 samples in estimated 5.0002 s (103M iterations)
-Benchmarking Time/H optional :M: Analyzing
-Time/H optional :M      time:   [48.133 ns 48.289 ns 48.462 ns]
-                        change: [-1.7289% -0.8611% -0.0780%] (p = 0.04 < 0.05)
-                        Change within noise threshold.
-Found 7 outliers among 100 measurements (7.00%)
-  4 (4.00%) low mild
-  3 (3.00%) high mild
-Benchmarking Time/H:M:S
-Benchmarking Time/H:M:S: Warming up for 3.0000 s
-Benchmarking Time/H:M:S: Collecting 100 samples in estimated 5.0002 s (85M iterations)
-Benchmarking Time/H:M:S: Analyzing
-Time/H:M:S              time:   [57.366 ns 57.604 ns 57.852 ns]
-                        change: [-1.0129% -0.3163% +0.3404%] (p = 0.38 > 0.05)
-                        No change in performance detected.
-Found 10 outliers among 100 measurements (10.00%)
-  3 (3.00%) low mild
+  1 (1.00%) low mild
   6 (6.00%) high mild
   1 (1.00%) high severe
-Benchmarking Time/H:M Optional :S
-Benchmarking Time/H:M Optional :S: Warming up for 3.0000 s
-Benchmarking Time/H:M Optional :S: Collecting 100 samples in estimated 5.0002 s (81M iterations)
-Benchmarking Time/H:M Optional :S: Analyzing
-Time/H:M Optional :S    time:   [61.734 ns 62.093 ns 62.553 ns]
-                        change: [-1.1670% -0.4663% +0.1962%] (p = 0.19 > 0.05)
-                        No change in performance detected.
-Found 12 outliers among 100 measurements (12.00%)
-  4 (4.00%) low mild
-  4 (4.00%) high mild
-  4 (4.00%) high severe
-Benchmarking Time/H:M:S.s
-Benchmarking Time/H:M:S.s: Warming up for 3.0000 s
-Benchmarking Time/H:M:S.s: Collecting 100 samples in estimated 5.0003 s (68M iterations)
-Benchmarking Time/H:M:S.s: Analyzing
-Time/H:M:S.s            time:   [72.422 ns 72.646 ns 72.881 ns]
-                        change: [-1.1403% -0.3998% +0.2382%] (p = 0.27 > 0.05)
-                        No change in performance detected.
-Found 7 outliers among 100 measurements (7.00%)
-  1 (1.00%) low severe
-  1 (1.00%) low mild
+Benchmarking Baseline/H:M:S
+Benchmarking Baseline/H:M:S: Warming up for 3.0000 s
+Benchmarking Baseline/H:M:S: Collecting 100 samples in estimated 5.0001 s (87M iterations)
+Benchmarking Baseline/H:M:S: Analyzing
+Baseline/H:M:S          time:   [56.981 ns 57.219 ns 57.477 ns]
+Found 10 outliers among 100 measurements (10.00%)
+  5 (5.00%) low mild
   5 (5.00%) high mild
-Benchmarking Time/H:M:S Optional .s
-Benchmarking Time/H:M:S Optional .s: Warming up for 3.0000 s
-Benchmarking Time/H:M:S Optional .s: Collecting 100 samples in estimated 5.0004 s (64M iterations)
-Benchmarking Time/H:M:S Optional .s: Analyzing
-Time/H:M:S Optional .s  time:   [77.512 ns 77.750 ns 78.000 ns]
-                        change: [-0.6415% +0.0660% +0.7527%] (p = 0.86 > 0.05)
-                        No change in performance detected.
-Found 5 outliers among 100 measurements (5.00%)
-  1 (1.00%) low mild
-  2 (2.00%) high mild
-  2 (2.00%) high severe
-Benchmarking Time/H:M Optional :S.s
-Benchmarking Time/H:M Optional :S.s: Warming up for 3.0000 s
-Benchmarking Time/H:M Optional :S.s: Collecting 100 samples in estimated 5.0003 s (60M iterations)
-Benchmarking Time/H:M Optional :S.s: Analyzing
-Time/H:M Optional :S.s  time:   [82.839 ns 83.101 ns 83.382 ns]
-                        change: [-0.7276% -0.0538% +0.6189%] (p = 0.88 > 0.05)
-                        No change in performance detected.
-Found 9 outliers among 100 measurements (9.00%)
-  1 (1.00%) low severe
+Benchmarking Baseline/H:M Optional :S
+Benchmarking Baseline/H:M Optional :S: Warming up for 3.0000 s
+Benchmarking Baseline/H:M Optional :S: Collecting 100 samples in estimated 5.0002 s (81M iterations)
+Benchmarking Baseline/H:M Optional :S: Analyzing
+Baseline/H:M Optional :S
+                        time:   [61.412 ns 61.691 ns 62.047 ns]
+Found 6 outliers among 100 measurements (6.00%)
   2 (2.00%) low mild
   3 (3.00%) high mild
-  3 (3.00%) high severe
-Benchmarking Time/RFC 3339 - Format Description
-Benchmarking Time/RFC 3339 - Format Description: Warming up for 3.0000 s
-Benchmarking Time/RFC 3339 - Format Description: Collecting 100 samples in estimated 5.0005 s (34M iterations)
-Benchmarking Time/RFC 3339 - Format Description: Analyzing
-Time/RFC 3339 - Format Description
-                        time:   [145.77 ns 146.20 ns 146.65 ns]
-                        change: [-1.3738% -0.7245% -0.0967%] (p = 0.03 < 0.05)
-                        Change within noise threshold.
-Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high severe
+Benchmarking Baseline/H:M:S.s
+Benchmarking Baseline/H:M:S.s: Warming up for 3.0000 s
+Benchmarking Baseline/H:M:S.s: Collecting 100 samples in estimated 5.0001 s (69M iterations)
+Benchmarking Baseline/H:M:S.s: Analyzing
+Baseline/H:M:S.s        time:   [71.969 ns 72.223 ns 72.492 ns]
+Found 5 outliers among 100 measurements (5.00%)
   1 (1.00%) low mild
-Benchmarking Time/RFC 3339 - Well Known
-Benchmarking Time/RFC 3339 - Well Known: Warming up for 3.0000 s
-Benchmarking Time/RFC 3339 - Well Known: Collecting 100 samples in estimated 5.0000 s (134M iterations)
-Benchmarking Time/RFC 3339 - Well Known: Analyzing
-Time/RFC 3339 - Well Known
-                        time:   [36.986 ns 37.084 ns 37.185 ns]
-                        change: [-2.0404% -1.2976% -0.5891%] (p = 0.00 < 0.05)
-                        Change within noise threshold.
-Found 10 outliers among 100 measurements (10.00%)
-  1 (1.00%) low severe
-  4 (4.00%) low mild
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+Benchmarking Baseline/H:M:S Optional .s
+Benchmarking Baseline/H:M:S Optional .s: Warming up for 3.0000 s
+Benchmarking Baseline/H:M:S Optional .s: Collecting 100 samples in estimated 5.0003 s (65M iterations)
+Benchmarking Baseline/H:M:S Optional .s: Analyzing
+Baseline/H:M:S Optional .s
+                        time:   [76.813 ns 77.041 ns 77.278 ns]
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) low mild
   5 (5.00%) high mild
+  1 (1.00%) high severe
+Benchmarking Baseline/H:M Optional :S.s
+Benchmarking Baseline/H:M Optional :S.s: Warming up for 3.0000 s
+Benchmarking Baseline/H:M Optional :S.s: Collecting 100 samples in estimated 5.0003 s (60M iterations)
+Benchmarking Baseline/H:M Optional :S.s: Analyzing
+Baseline/H:M Optional :S.s
+                        time:   [82.446 ns 82.872 ns 83.335 ns]
+Found 4 outliers among 100 measurements (4.00%)
+  4 (4.00%) high mild
+Benchmarking Baseline/RFC 3339 - Format Description
+Benchmarking Baseline/RFC 3339 - Format Description: Warming up for 3.0000 s
+Benchmarking Baseline/RFC 3339 - Format Description: Collecting 100 samples in estimated 5.0000 s (34M iterations)
+Benchmarking Baseline/RFC 3339 - Format Description: Analyzing
+Baseline/RFC 3339 - Format Description
+                        time:   [145.09 ns 145.57 ns 146.05 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  6 (6.00%) low mild
+  1 (1.00%) high mild
+Benchmarking Baseline/RFC 3339 - Well Known
+Benchmarking Baseline/RFC 3339 - Well Known: Warming up for 3.0000 s
+Benchmarking Baseline/RFC 3339 - Well Known: Collecting 100 samples in estimated 5.0002 s (134M iterations)
+Benchmarking Baseline/RFC 3339 - Well Known: Analyzing
+Baseline/RFC 3339 - Well Known
+                        time:   [36.975 ns 37.096 ns 37.225 ns]
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) low mild
+  5 (5.00%) high mild
+  1 (1.00%) high severe
 
 WARNING: HTML report generation will become a non-default optional feature in Criterion.rs 0.4.0.
 This feature is being moved to cargo-criterion (https://github.com/bheisler/cargo-criterion) and will be optional in a future version of Criterion.rs. To silence this warning, either switch to cargo-criterion or enable the 'html_reports' feature in your Cargo.toml.
@@ -124,374 +92,457 @@ Benchmarking OffsetDateTime/1st ATT/2016-03-07T22:36:55.135+03:30: Warming up fo
 Benchmarking OffsetDateTime/1st ATT/2016-03-07T22:36:55.135+03:30: Collecting 100 samples in estimated 5.0001 s (87M iterations)
 Benchmarking OffsetDateTime/1st ATT/2016-03-07T22:36:55.135+03:30: Analyzing
 OffsetDateTime/1st ATT/2016-03-07T22:36:55.135+03:30
-                        time:   [56.732 ns 56.959 ns 57.232 ns]
-Found 7 outliers among 100 measurements (7.00%)
-  1 (1.00%) low mild
-  4 (4.00%) high mild
-  2 (2.00%) high severe
-Benchmarking OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30
-Benchmarking OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30: Collecting 100 samples in estimated 5.0013 s (7.2M iterations)
-Benchmarking OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30: Analyzing
-OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30
-                        time:   [682.00 ns 685.20 ns 688.71 ns]
-Found 6 outliers among 100 measurements (6.00%)
+                        time:   [56.616 ns 56.820 ns 57.042 ns]
+                        change: [-1.0892% -0.4146% +0.1903%] (p = 0.24 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
   2 (2.00%) low mild
   2 (2.00%) high mild
-  2 (2.00%) high severe
+  1 (1.00%) high severe
+Benchmarking OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30
+Benchmarking OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30: Warming up for 3.0000 s
+Benchmarking OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30: Collecting 100 samples in estimated 5.0025 s (7.2M iterations)
+Benchmarking OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30: Analyzing
+OffsetDateTime/2nd ATT/2016-03-07T22:36:55.135+03:30
+                        time:   [685.31 ns 688.30 ns 691.84 ns]
+                        change: [-0.6110% +0.1715% +0.9220%] (p = 0.67 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
 Benchmarking OffsetDateTime/3rd ATT/2016-03-07T22:36:55.135+03:30
 Benchmarking OffsetDateTime/3rd ATT/2016-03-07T22:36:55.135+03:30: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/3rd ATT/2016-03-07T22:36:55.135+03:30: Collecting 100 samples in estimated 5.0000 s (88M iterations)
+Benchmarking OffsetDateTime/3rd ATT/2016-03-07T22:36:55.135+03:30: Collecting 100 samples in estimated 5.0002 s (89M iterations)
 Benchmarking OffsetDateTime/3rd ATT/2016-03-07T22:36:55.135+03:30: Analyzing
 OffsetDateTime/3rd ATT/2016-03-07T22:36:55.135+03:30
-                        time:   [56.334 ns 56.640 ns 57.045 ns]
-Found 7 outliers among 100 measurements (7.00%)
-  1 (1.00%) low mild
-  4 (4.00%) high mild
+                        time:   [56.073 ns 56.405 ns 56.804 ns]
+                        change: [-1.8270% -1.1433% -0.4368%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) low mild
+  2 (2.00%) high mild
   2 (2.00%) high severe
 Benchmarking OffsetDateTime/4th ATT/2016-03-07T22:36:55.135+03:30
 Benchmarking OffsetDateTime/4th ATT/2016-03-07T22:36:55.135+03:30: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/4th ATT/2016-03-07T22:36:55.135+03:30: Collecting 100 samples in estimated 5.0002 s (89M iterations)
+Benchmarking OffsetDateTime/4th ATT/2016-03-07T22:36:55.135+03:30: Collecting 100 samples in estimated 5.0001 s (89M iterations)
 Benchmarking OffsetDateTime/4th ATT/2016-03-07T22:36:55.135+03:30: Analyzing
 OffsetDateTime/4th ATT/2016-03-07T22:36:55.135+03:30
-                        time:   [55.697 ns 55.878 ns 56.069 ns]
-Found 6 outliers among 100 measurements (6.00%)
+                        time:   [55.693 ns 55.885 ns 56.093 ns]
+                        change: [-0.8281% -0.2234% +0.3668%] (p = 0.46 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
   3 (3.00%) low mild
-  2 (2.00%) high mild
-  1 (1.00%) high severe
+  1 (1.00%) high mild
 Benchmarking OffsetDateTime/1st ATT/2013-09-17 23:59-01:00
 Benchmarking OffsetDateTime/1st ATT/2013-09-17 23:59-01:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/1st ATT/2013-09-17 23:59-01:00: Collecting 100 samples in estimated 5.0011 s (14M iterations)
+Benchmarking OffsetDateTime/1st ATT/2013-09-17 23:59-01:00: Collecting 100 samples in estimated 5.0009 s (14M iterations)
 Benchmarking OffsetDateTime/1st ATT/2013-09-17 23:59-01:00: Analyzing
 OffsetDateTime/1st ATT/2013-09-17 23:59-01:00
-                        time:   [346.98 ns 348.24 ns 349.60 ns]
-Found 6 outliers among 100 measurements (6.00%)
+                        time:   [345.99 ns 347.02 ns 348.12 ns]
+                        change: [-0.4931% +0.1729% +0.7694%] (p = 0.60 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
   2 (2.00%) low mild
   3 (3.00%) high mild
-  1 (1.00%) high severe
+  2 (2.00%) high severe
 Benchmarking OffsetDateTime/2nd ATT/2013-09-17 23:59-01:00
 Benchmarking OffsetDateTime/2nd ATT/2013-09-17 23:59-01:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/2nd ATT/2013-09-17 23:59-01:00: Collecting 100 samples in estimated 5.0020 s (8.1M iterations)
+Benchmarking OffsetDateTime/2nd ATT/2013-09-17 23:59-01:00: Collecting 100 samples in estimated 5.0009 s (7.8M iterations)
 Benchmarking OffsetDateTime/2nd ATT/2013-09-17 23:59-01:00: Analyzing
 OffsetDateTime/2nd ATT/2013-09-17 23:59-01:00
-                        time:   [621.34 ns 623.83 ns 626.39 ns]
-Found 2 outliers among 100 measurements (2.00%)
-  2 (2.00%) high mild
+                        time:   [617.16 ns 619.18 ns 621.32 ns]
+                        change: [-0.6009% +0.1878% +1.0887%] (p = 0.67 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) low mild
+  5 (5.00%) high mild
+  2 (2.00%) high severe
 Benchmarking OffsetDateTime/3rd ATT/2013-09-17 23:59-01:00
 Benchmarking OffsetDateTime/3rd ATT/2013-09-17 23:59-01:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/3rd ATT/2013-09-17 23:59-01:00: Collecting 100 samples in estimated 5.0008 s (24M iterations)
+Benchmarking OffsetDateTime/3rd ATT/2013-09-17 23:59-01:00: Collecting 100 samples in estimated 5.0010 s (23M iterations)
 Benchmarking OffsetDateTime/3rd ATT/2013-09-17 23:59-01:00: Analyzing
 OffsetDateTime/3rd ATT/2013-09-17 23:59-01:00
-                        time:   [202.70 ns 203.38 ns 204.14 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  3 (3.00%) high mild
-  3 (3.00%) high severe
+                        time:   [212.18 ns 212.86 ns 213.55 ns]
+                        change: [+2.4376% +3.3780% +4.2307%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 16 outliers among 100 measurements (16.00%)
+  1 (1.00%) low severe
+  6 (6.00%) low mild
+  7 (7.00%) high mild
+  2 (2.00%) high severe
 Benchmarking OffsetDateTime/4th ATT/2013-09-17 23:59-01:00
 Benchmarking OffsetDateTime/4th ATT/2013-09-17 23:59-01:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/4th ATT/2013-09-17 23:59-01:00: Collecting 100 samples in estimated 5.0003 s (24M iterations)
+Benchmarking OffsetDateTime/4th ATT/2013-09-17 23:59-01:00: Collecting 100 samples in estimated 5.0002 s (24M iterations)
 Benchmarking OffsetDateTime/4th ATT/2013-09-17 23:59-01:00: Analyzing
 OffsetDateTime/4th ATT/2013-09-17 23:59-01:00
-                        time:   [208.20 ns 208.98 ns 209.88 ns]
+                        time:   [206.39 ns 207.33 ns 208.29 ns]
+                        change: [-1.7701% -1.1973% -0.6187%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+Benchmarking OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00
+Benchmarking OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00: Warming up for 3.0000 s
+Benchmarking OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00: Collecting 100 samples in estimated 5.0007 s (30M iterations)
+Benchmarking OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00: Analyzing
+OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00
+                        time:   [167.25 ns 167.81 ns 168.41 ns]
+                        change: [-2.7137% -1.7897% -0.9559%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00
+Benchmarking OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00: Warming up for 3.0000 s
+Benchmarking OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00: Collecting 100 samples in estimated 5.0028 s (7.9M iterations)
+Benchmarking OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00: Analyzing
+OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00
+                        time:   [628.24 ns 631.63 ns 635.34 ns]
+                        change: [+0.4690% +1.1518% +1.8327%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+Benchmarking OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00
+Benchmarking OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00: Warming up for 3.0000 s
+Benchmarking OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00: Collecting 100 samples in estimated 5.0007 s (25M iterations)
+Benchmarking OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00: Analyzing
+OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00
+                        time:   [199.78 ns 200.46 ns 201.18 ns]
+                        change: [-1.2288% -0.4866% +0.2310%] (p = 0.22 > 0.05)
+                        No change in performance detected.
 Found 6 outliers among 100 measurements (6.00%)
   1 (1.00%) low mild
   3 (3.00%) high mild
   2 (2.00%) high severe
-Benchmarking OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00
-Benchmarking OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00: Collecting 100 samples in estimated 5.0005 s (29M iterations)
-Benchmarking OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00: Analyzing
-OffsetDateTime/1st ATT/2015-11-19 01:01:39+01:00
-                        time:   [169.62 ns 170.28 ns 171.00 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  3 (3.00%) low mild
-  1 (1.00%) high mild
-  4 (4.00%) high severe
-Benchmarking OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00
-Benchmarking OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00: Collecting 100 samples in estimated 5.0008 s (8.0M iterations)
-Benchmarking OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00: Analyzing
-OffsetDateTime/2nd ATT/2015-11-19 01:01:39+01:00
-                        time:   [619.67 ns 622.00 ns 624.36 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  3 (3.00%) low mild
-  4 (4.00%) high mild
-  1 (1.00%) high severe
-Benchmarking OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00
-Benchmarking OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00: Collecting 100 samples in estimated 5.0009 s (24M iterations)
-Benchmarking OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00: Analyzing
-OffsetDateTime/3rd ATT/2015-11-19 01:01:39+01:00
-                        time:   [202.31 ns 203.02 ns 203.79 ns]
-Found 11 outliers among 100 measurements (11.00%)
-  2 (2.00%) low severe
-  3 (3.00%) low mild
-  6 (6.00%) high mild
 Benchmarking OffsetDateTime/4th ATT/2015-11-19 01:01:39+01:00
 Benchmarking OffsetDateTime/4th ATT/2015-11-19 01:01:39+01:00: Warming up for 3.0000 s
 Benchmarking OffsetDateTime/4th ATT/2015-11-19 01:01:39+01:00: Collecting 100 samples in estimated 5.0003 s (24M iterations)
 Benchmarking OffsetDateTime/4th ATT/2015-11-19 01:01:39+01:00: Analyzing
 OffsetDateTime/4th ATT/2015-11-19 01:01:39+01:00
-                        time:   [209.03 ns 209.85 ns 210.72 ns]
-Found 2 outliers among 100 measurements (2.00%)
-  1 (1.00%) low mild
-  1 (1.00%) high mild
-Benchmarking OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00
-Benchmarking OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00: Collecting 100 samples in estimated 5.0011 s (16M iterations)
-Benchmarking OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00: Analyzing
-OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00
-                        time:   [309.49 ns 310.46 ns 311.46 ns]
+                        time:   [206.48 ns 207.09 ns 207.75 ns]
+                        change: [-1.3760% -0.7662% -0.1655%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
 Found 6 outliers among 100 measurements (6.00%)
   2 (2.00%) low mild
   2 (2.00%) high mild
   2 (2.00%) high severe
+Benchmarking OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00
+Benchmarking OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00: Warming up for 3.0000 s
+Benchmarking OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00: Collecting 100 samples in estimated 5.0001 s (16M iterations)
+Benchmarking OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00: Analyzing
+OffsetDateTime/1st ATT/2014-10-18 00:00:38.697+00:00
+                        time:   [306.40 ns 307.55 ns 308.80 ns]
+                        change: [-2.1793% -1.5519% -0.9187%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  5 (5.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
 Benchmarking OffsetDateTime/2nd ATT/2014-10-18 00:00:38.697+00:00
 Benchmarking OffsetDateTime/2nd ATT/2014-10-18 00:00:38.697+00:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/2nd ATT/2014-10-18 00:00:38.697+00:00: Collecting 100 samples in estimated 5.0015 s (7.9M iterations)
+Benchmarking OffsetDateTime/2nd ATT/2014-10-18 00:00:38.697+00:00: Collecting 100 samples in estimated 5.0001 s (7.7M iterations)
 Benchmarking OffsetDateTime/2nd ATT/2014-10-18 00:00:38.697+00:00: Analyzing
 OffsetDateTime/2nd ATT/2014-10-18 00:00:38.697+00:00
-                        time:   [627.49 ns 629.69 ns 632.05 ns]
-Found 3 outliers among 100 measurements (3.00%)
-  1 (1.00%) low mild
-  1 (1.00%) high mild
+                        time:   [626.23 ns 629.65 ns 633.69 ns]
+                        change: [-0.5506% +0.1988% +0.9492%] (p = 0.60 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) low mild
+  5 (5.00%) high mild
   1 (1.00%) high severe
 Benchmarking OffsetDateTime/3rd ATT/2014-10-18 00:00:38.697+00:00
 Benchmarking OffsetDateTime/3rd ATT/2014-10-18 00:00:38.697+00:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/3rd ATT/2014-10-18 00:00:38.697+00:00: Collecting 100 samples in estimated 5.0005 s (22M iterations)
+Benchmarking OffsetDateTime/3rd ATT/2014-10-18 00:00:38.697+00:00: Collecting 100 samples in estimated 5.0007 s (23M iterations)
 Benchmarking OffsetDateTime/3rd ATT/2014-10-18 00:00:38.697+00:00: Analyzing
 OffsetDateTime/3rd ATT/2014-10-18 00:00:38.697+00:00
-                        time:   [222.47 ns 223.34 ns 224.27 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  3 (3.00%) low mild
+                        time:   [220.14 ns 220.93 ns 221.82 ns]
+                        change: [-1.7606% -1.1413% -0.4957%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) low mild
   4 (4.00%) high mild
   1 (1.00%) high severe
 Benchmarking OffsetDateTime/4th ATT/2014-10-18 00:00:38.697+00:00
 Benchmarking OffsetDateTime/4th ATT/2014-10-18 00:00:38.697+00:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/4th ATT/2014-10-18 00:00:38.697+00:00: Collecting 100 samples in estimated 5.0003 s (22M iterations)
+Benchmarking OffsetDateTime/4th ATT/2014-10-18 00:00:38.697+00:00: Collecting 100 samples in estimated 5.0001 s (22M iterations)
 Benchmarking OffsetDateTime/4th ATT/2014-10-18 00:00:38.697+00:00: Analyzing
 OffsetDateTime/4th ATT/2014-10-18 00:00:38.697+00:00
-                        time:   [226.49 ns 227.28 ns 228.12 ns]
-Found 3 outliers among 100 measurements (3.00%)
-  1 (1.00%) low mild
+                        time:   [223.91 ns 225.06 ns 226.67 ns]
+                        change: [-1.6510% -0.7941% +0.3727%] (p = 0.13 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) low mild
   2 (2.00%) high mild
+  1 (1.00%) high severe
 Benchmarking OffsetDateTime/1st ATT/2017-04-11T14:35+02:00
 Benchmarking OffsetDateTime/1st ATT/2017-04-11T14:35+02:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/1st ATT/2017-04-11T14:35+02:00: Collecting 100 samples in estimated 5.0000 s (14M iterations)
+Benchmarking OffsetDateTime/1st ATT/2017-04-11T14:35+02:00: Collecting 100 samples in estimated 5.0016 s (14M iterations)
 Benchmarking OffsetDateTime/1st ATT/2017-04-11T14:35+02:00: Analyzing
 OffsetDateTime/1st ATT/2017-04-11T14:35+02:00
-                        time:   [358.18 ns 359.46 ns 360.91 ns]
+                        time:   [355.38 ns 357.21 ns 359.37 ns]
+                        change: [-1.3319% -0.7221% -0.1232%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
 Found 9 outliers among 100 measurements (9.00%)
-  5 (5.00%) low mild
-  4 (4.00%) high mild
+  6 (6.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
 Benchmarking OffsetDateTime/2nd ATT/2017-04-11T14:35+02:00
 Benchmarking OffsetDateTime/2nd ATT/2017-04-11T14:35+02:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/2nd ATT/2017-04-11T14:35+02:00: Collecting 100 samples in estimated 5.0021 s (7.3M iterations)
+Benchmarking OffsetDateTime/2nd ATT/2017-04-11T14:35+02:00: Collecting 100 samples in estimated 5.0018 s (7.2M iterations)
 Benchmarking OffsetDateTime/2nd ATT/2017-04-11T14:35+02:00: Analyzing
 OffsetDateTime/2nd ATT/2017-04-11T14:35+02:00
-                        time:   [685.23 ns 687.78 ns 690.40 ns]
-Found 3 outliers among 100 measurements (3.00%)
-  1 (1.00%) high mild
+                        time:   [675.13 ns 678.43 ns 682.61 ns]
+                        change: [-2.6405% -1.7322% -0.8102%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) low mild
+  5 (5.00%) high mild
   2 (2.00%) high severe
 Benchmarking OffsetDateTime/3rd ATT/2017-04-11T14:35+02:00
 Benchmarking OffsetDateTime/3rd ATT/2017-04-11T14:35+02:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/3rd ATT/2017-04-11T14:35+02:00: Collecting 100 samples in estimated 5.0004 s (19M iterations)
+Benchmarking OffsetDateTime/3rd ATT/2017-04-11T14:35+02:00: Collecting 100 samples in estimated 5.0005 s (19M iterations)
 Benchmarking OffsetDateTime/3rd ATT/2017-04-11T14:35+02:00: Analyzing
 OffsetDateTime/3rd ATT/2017-04-11T14:35+02:00
-                        time:   [259.71 ns 260.58 ns 261.56 ns]
-Found 7 outliers among 100 measurements (7.00%)
-  3 (3.00%) low mild
-  4 (4.00%) high mild
+                        time:   [257.10 ns 258.14 ns 259.34 ns]
+                        change: [-1.4319% -0.8910% -0.3086%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) low mild
+  3 (3.00%) high mild
 Benchmarking OffsetDateTime/4th ATT/2017-04-11T14:35+02:00
 Benchmarking OffsetDateTime/4th ATT/2017-04-11T14:35+02:00: Warming up for 3.0000 s
-Benchmarking OffsetDateTime/4th ATT/2017-04-11T14:35+02:00: Collecting 100 samples in estimated 5.0010 s (24M iterations)
+Benchmarking OffsetDateTime/4th ATT/2017-04-11T14:35+02:00: Collecting 100 samples in estimated 5.0006 s (24M iterations)
 Benchmarking OffsetDateTime/4th ATT/2017-04-11T14:35+02:00: Analyzing
 OffsetDateTime/4th ATT/2017-04-11T14:35+02:00
-                        time:   [210.55 ns 211.23 ns 211.92 ns]
-Found 10 outliers among 100 measurements (10.00%)
-  7 (7.00%) high mild
+                        time:   [214.59 ns 215.48 ns 216.51 ns]
+                        change: [+0.6740% +1.7145% +2.8412%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) low mild
+  3 (3.00%) high mild
   3 (3.00%) high severe
 
 Benchmarking PrimitiveDateTime/1st ATT/2018-12-01 04:09:19.543
 Benchmarking PrimitiveDateTime/1st ATT/2018-12-01 04:09:19.543: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2018-12-01 04:09:19.543: Collecting 100 samples in estimated 5.0009 s (21M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2018-12-01 04:09:19.543: Collecting 100 samples in estimated 5.0006 s (20M iterations)
 Benchmarking PrimitiveDateTime/1st ATT/2018-12-01 04:09:19.543: Analyzing
 PrimitiveDateTime/1st ATT/2018-12-01 04:09:19.543
-                        time:   [239.46 ns 240.36 ns 241.28 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  5 (5.00%) low mild
-  3 (3.00%) high mild
+                        time:   [238.17 ns 239.57 ns 241.20 ns]
+                        change: [-1.0528% -0.4026% +0.2508%] (p = 0.22 > 0.05)
+                        No change in performance detected.
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) low mild
+  5 (5.00%) high mild
+  3 (3.00%) high severe
 Benchmarking PrimitiveDateTime/2nd ATT/2018-12-01 04:09:19.543
 Benchmarking PrimitiveDateTime/2nd ATT/2018-12-01 04:09:19.543: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2018-12-01 04:09:19.543: Collecting 100 samples in estimated 5.0027 s (8.5M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2018-12-01 04:09:19.543: Collecting 100 samples in estimated 5.0009 s (8.5M iterations)
 Benchmarking PrimitiveDateTime/2nd ATT/2018-12-01 04:09:19.543: Analyzing
 PrimitiveDateTime/2nd ATT/2018-12-01 04:09:19.543
-                        time:   [583.94 ns 586.01 ns 588.17 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  3 (3.00%) high mild
-  1 (1.00%) high severe
+                        time:   [578.46 ns 580.67 ns 583.03 ns]
+                        change: [-2.3380% -1.6298% -0.9852%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
 Benchmarking PrimitiveDateTime/3rd ATT/2018-12-01 04:09:19.543
 Benchmarking PrimitiveDateTime/3rd ATT/2018-12-01 04:09:19.543: Warming up for 3.0000 s
 Benchmarking PrimitiveDateTime/3rd ATT/2018-12-01 04:09:19.543: Collecting 100 samples in estimated 5.0006 s (36M iterations)
 Benchmarking PrimitiveDateTime/3rd ATT/2018-12-01 04:09:19.543: Analyzing
 PrimitiveDateTime/3rd ATT/2018-12-01 04:09:19.543
-                        time:   [138.59 ns 139.06 ns 139.58 ns]
+                        time:   [136.80 ns 137.22 ns 137.68 ns]
+                        change: [-1.9451% -1.3552% -0.7620%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
 Found 7 outliers among 100 measurements (7.00%)
   3 (3.00%) low mild
-  2 (2.00%) high mild
-  2 (2.00%) high severe
-Benchmarking PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543
-Benchmarking PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543: Collecting 100 samples in estimated 5.0004 s (36M iterations)
-Benchmarking PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543: Analyzing
-PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543
-                        time:   [138.98 ns 139.47 ns 140.03 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  4 (4.00%) low mild
   3 (3.00%) high mild
   1 (1.00%) high severe
+Benchmarking PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543
+Benchmarking PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543: Collecting 100 samples in estimated 5.0006 s (36M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543: Analyzing
+PrimitiveDateTime/4th ATT/2018-12-01 04:09:19.543
+                        time:   [137.44 ns 137.83 ns 138.24 ns]
+                        change: [-1.9784% -1.2490% -0.5329%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) low mild
+  4 (4.00%) high mild
+  2 (2.00%) high severe
 Benchmarking PrimitiveDateTime/1st ATT/2017-11-30 03:08
 Benchmarking PrimitiveDateTime/1st ATT/2017-11-30 03:08: Warming up for 3.0000 s
 Benchmarking PrimitiveDateTime/1st ATT/2017-11-30 03:08: Collecting 100 samples in estimated 5.0000 s (17M iterations)
 Benchmarking PrimitiveDateTime/1st ATT/2017-11-30 03:08: Analyzing
 PrimitiveDateTime/1st ATT/2017-11-30 03:08
-                        time:   [291.19 ns 292.72 ns 294.51 ns]
+                        time:   [289.30 ns 290.94 ns 292.98 ns]
+                        change: [-1.8123% -1.1878% -0.5989%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
 Found 8 outliers among 100 measurements (8.00%)
-  3 (3.00%) low mild
-  5 (5.00%) high mild
+  4 (4.00%) low mild
+  3 (3.00%) high mild
+  1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/2nd ATT/2017-11-30 03:08
 Benchmarking PrimitiveDateTime/2nd ATT/2017-11-30 03:08: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2017-11-30 03:08: Collecting 100 samples in estimated 5.0027 s (8.9M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2017-11-30 03:08: Collecting 100 samples in estimated 5.0028 s (8.8M iterations)
 Benchmarking PrimitiveDateTime/2nd ATT/2017-11-30 03:08: Analyzing
 PrimitiveDateTime/2nd ATT/2017-11-30 03:08
-                        time:   [556.53 ns 558.75 ns 561.23 ns]
-Found 7 outliers among 100 measurements (7.00%)
-  4 (4.00%) low mild
-  2 (2.00%) high mild
-  1 (1.00%) high severe
+                        time:   [552.86 ns 555.48 ns 558.32 ns]
+                        change: [-1.5196% -0.6597% +0.1949%] (p = 0.13 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) low mild
+  1 (1.00%) high mild
+  2 (2.00%) high severe
 Benchmarking PrimitiveDateTime/3rd ATT/2017-11-30 03:08
 Benchmarking PrimitiveDateTime/3rd ATT/2017-11-30 03:08: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2017-11-30 03:08: Collecting 100 samples in estimated 5.0009 s (21M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2017-11-30 03:08: Collecting 100 samples in estimated 5.0004 s (21M iterations)
 Benchmarking PrimitiveDateTime/3rd ATT/2017-11-30 03:08: Analyzing
 PrimitiveDateTime/3rd ATT/2017-11-30 03:08
-                        time:   [241.55 ns 242.54 ns 243.61 ns]
-Found 5 outliers among 100 measurements (5.00%)
+                        time:   [236.91 ns 237.77 ns 238.70 ns]
+                        change: [-2.6658% -2.0580% -1.4079%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 6 outliers among 100 measurements (6.00%)
   1 (1.00%) low mild
-  4 (4.00%) high mild
+  1 (1.00%) high mild
+  4 (4.00%) high severe
 Benchmarking PrimitiveDateTime/4th ATT/2017-11-30 03:08
 Benchmarking PrimitiveDateTime/4th ATT/2017-11-30 03:08: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2017-11-30 03:08: Collecting 100 samples in estimated 5.0011 s (18M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2017-11-30 03:08: Collecting 100 samples in estimated 5.0005 s (18M iterations)
 Benchmarking PrimitiveDateTime/4th ATT/2017-11-30 03:08: Analyzing
 PrimitiveDateTime/4th ATT/2017-11-30 03:08
-                        time:   [271.13 ns 272.03 ns 273.00 ns]
-Found 11 outliers among 100 measurements (11.00%)
-  2 (2.00%) low severe
-  2 (2.00%) low mild
-  7 (7.00%) high mild
+                        time:   [269.16 ns 270.32 ns 271.67 ns]
+                        change: [-1.1469% -0.3746% +0.4874%] (p = 0.35 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) high mild
+  4 (4.00%) high severe
 Benchmarking PrimitiveDateTime/1st ATT/2011-05-24 21:02Z
 Benchmarking PrimitiveDateTime/1st ATT/2011-05-24 21:02Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2011-05-24 21:02Z: Collecting 100 samples in estimated 5.0003 s (6.4M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2011-05-24 21:02Z: Collecting 100 samples in estimated 5.0035 s (6.5M iterations)
 Benchmarking PrimitiveDateTime/1st ATT/2011-05-24 21:02Z: Analyzing
 PrimitiveDateTime/1st ATT/2011-05-24 21:02Z
-                        time:   [777.09 ns 781.13 ns 786.21 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  2 (2.00%) low mild
-  2 (2.00%) high severe
+                        time:   [765.63 ns 768.20 ns 770.95 ns]
+                        change: [-2.2331% -1.6227% -1.0067%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 7 outliers among 100 measurements (7.00%)
+  6 (6.00%) low mild
+  1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/2nd ATT/2011-05-24 21:02Z
 Benchmarking PrimitiveDateTime/2nd ATT/2011-05-24 21:02Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2011-05-24 21:02Z: Collecting 100 samples in estimated 5.0013 s (8.8M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2011-05-24 21:02Z: Collecting 100 samples in estimated 5.0007 s (8.7M iterations)
 Benchmarking PrimitiveDateTime/2nd ATT/2011-05-24 21:02Z: Analyzing
 PrimitiveDateTime/2nd ATT/2011-05-24 21:02Z
-                        time:   [561.47 ns 563.58 ns 565.81 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  4 (4.00%) low mild
-  1 (1.00%) high mild
-  3 (3.00%) high severe
+                        time:   [571.53 ns 574.34 ns 577.16 ns]
+                        change: [+1.4576% +2.3443% +3.3150%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
 Benchmarking PrimitiveDateTime/3rd ATT/2011-05-24 21:02Z
 Benchmarking PrimitiveDateTime/3rd ATT/2011-05-24 21:02Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2011-05-24 21:02Z: Collecting 100 samples in estimated 5.0005 s (20M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2011-05-24 21:02Z: Collecting 100 samples in estimated 5.0011 s (18M iterations)
 Benchmarking PrimitiveDateTime/3rd ATT/2011-05-24 21:02Z: Analyzing
 PrimitiveDateTime/3rd ATT/2011-05-24 21:02Z
-                        time:   [248.84 ns 249.89 ns 251.02 ns]
+                        time:   [280.09 ns 281.07 ns 282.13 ns]
+                        change: [+12.317% +13.436% +14.731%] (p = 0.00 < 0.05)
+                        Performance has regressed.
 Found 6 outliers among 100 measurements (6.00%)
-  5 (5.00%) high mild
-  1 (1.00%) high severe
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  3 (3.00%) high severe
 Benchmarking PrimitiveDateTime/4th ATT/2011-05-24 21:02Z
 Benchmarking PrimitiveDateTime/4th ATT/2011-05-24 21:02Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2011-05-24 21:02Z: Collecting 100 samples in estimated 5.0013 s (18M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2011-05-24 21:02Z: Collecting 100 samples in estimated 5.0002 s (18M iterations)
 Benchmarking PrimitiveDateTime/4th ATT/2011-05-24 21:02Z: Analyzing
 PrimitiveDateTime/4th ATT/2011-05-24 21:02Z
-                        time:   [280.55 ns 281.73 ns 283.04 ns]
-Found 9 outliers among 100 measurements (9.00%)
-  4 (4.00%) low mild
-  4 (4.00%) high mild
-  1 (1.00%) high severe
+                        time:   [277.09 ns 277.95 ns 278.78 ns]
+                        change: [-1.9967% -1.3901% -0.7428%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
 Benchmarking PrimitiveDateTime/1st ATT/2019-01-02 05:10:20
 Benchmarking PrimitiveDateTime/1st ATT/2019-01-02 05:10:20: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2019-01-02 05:10:20: Collecting 100 samples in estimated 5.0003 s (40M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2019-01-02 05:10:20: Collecting 100 samples in estimated 5.0003 s (41M iterations)
 Benchmarking PrimitiveDateTime/1st ATT/2019-01-02 05:10:20: Analyzing
 PrimitiveDateTime/1st ATT/2019-01-02 05:10:20
-                        time:   [123.40 ns 123.72 ns 124.06 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  4 (4.00%) low mild
-  1 (1.00%) high mild
+                        time:   [121.70 ns 122.19 ns 122.71 ns]
+                        change: [-2.0513% -1.2964% -0.5510%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
   1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/2nd ATT/2019-01-02 05:10:20
 Benchmarking PrimitiveDateTime/2nd ATT/2019-01-02 05:10:20: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2019-01-02 05:10:20: Collecting 100 samples in estimated 5.0019 s (8.8M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2019-01-02 05:10:20: Collecting 100 samples in estimated 5.0011 s (8.6M iterations)
 Benchmarking PrimitiveDateTime/2nd ATT/2019-01-02 05:10:20: Analyzing
 PrimitiveDateTime/2nd ATT/2019-01-02 05:10:20
-                        time:   [571.11 ns 573.54 ns 576.14 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  4 (4.00%) low mild
-  1 (1.00%) high mild
-  1 (1.00%) high severe
+                        time:   [560.63 ns 562.55 ns 564.59 ns]
+                        change: [-2.6582% -1.9495% -1.2237%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) low mild
+  4 (4.00%) high mild
 Benchmarking PrimitiveDateTime/3rd ATT/2019-01-02 05:10:20
 Benchmarking PrimitiveDateTime/3rd ATT/2019-01-02 05:10:20: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2019-01-02 05:10:20: Collecting 100 samples in estimated 5.0007 s (19M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2019-01-02 05:10:20: Collecting 100 samples in estimated 5.0012 s (20M iterations)
 Benchmarking PrimitiveDateTime/3rd ATT/2019-01-02 05:10:20: Analyzing
 PrimitiveDateTime/3rd ATT/2019-01-02 05:10:20
-                        time:   [256.72 ns 257.69 ns 258.71 ns]
+                        time:   [252.64 ns 253.42 ns 254.24 ns]
+                        change: [-2.4494% -1.8697% -1.2959%] (p = 0.00 < 0.05)
+                        Performance has improved.
 Found 5 outliers among 100 measurements (5.00%)
   3 (3.00%) low mild
-  1 (1.00%) high mild
-  1 (1.00%) high severe
+  2 (2.00%) high mild
 Benchmarking PrimitiveDateTime/4th ATT/2019-01-02 05:10:20
 Benchmarking PrimitiveDateTime/4th ATT/2019-01-02 05:10:20: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2019-01-02 05:10:20: Collecting 100 samples in estimated 5.0013 s (17M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2019-01-02 05:10:20: Collecting 100 samples in estimated 5.0005 s (17M iterations)
 Benchmarking PrimitiveDateTime/4th ATT/2019-01-02 05:10:20: Analyzing
 PrimitiveDateTime/4th ATT/2019-01-02 05:10:20
-                        time:   [287.27 ns 288.37 ns 289.46 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  1 (1.00%) low mild
-  2 (2.00%) high mild
-  1 (1.00%) high severe
+                        time:   [284.96 ns 288.07 ns 293.23 ns]
+                        change: [-1.7903% -1.0228% -0.0961%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) low mild
+  4 (4.00%) high mild
+  2 (2.00%) high severe
 Benchmarking PrimitiveDateTime/1st ATT/2013-07-26 23:04:14Z
 Benchmarking PrimitiveDateTime/1st ATT/2013-07-26 23:04:14Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2013-07-26 23:04:14Z: Collecting 100 samples in estimated 5.0006 s (8.0M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2013-07-26 23:04:14Z: Collecting 100 samples in estimated 5.0011 s (8.0M iterations)
 Benchmarking PrimitiveDateTime/1st ATT/2013-07-26 23:04:14Z: Analyzing
 PrimitiveDateTime/1st ATT/2013-07-26 23:04:14Z
-                        time:   [622.82 ns 624.92 ns 627.11 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  2 (2.00%) low mild
-  2 (2.00%) high mild
+                        time:   [617.86 ns 620.32 ns 622.84 ns]
+                        change: [-1.3476% -0.7569% -0.1025%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
 Benchmarking PrimitiveDateTime/2nd ATT/2013-07-26 23:04:14Z
 Benchmarking PrimitiveDateTime/2nd ATT/2013-07-26 23:04:14Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2013-07-26 23:04:14Z: Collecting 100 samples in estimated 5.0012 s (8.7M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2013-07-26 23:04:14Z: Collecting 100 samples in estimated 5.0019 s (8.5M iterations)
 Benchmarking PrimitiveDateTime/2nd ATT/2013-07-26 23:04:14Z: Analyzing
 PrimitiveDateTime/2nd ATT/2013-07-26 23:04:14Z
-                        time:   [571.56 ns 574.00 ns 576.72 ns]
-Found 12 outliers among 100 measurements (12.00%)
+                        time:   [564.20 ns 566.66 ns 569.26 ns]
+                        change: [-2.0546% -1.2565% -0.3242%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
   3 (3.00%) low mild
-  5 (5.00%) high mild
-  4 (4.00%) high severe
+  3 (3.00%) high mild
+  1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/3rd ATT/2013-07-26 23:04:14Z
 Benchmarking PrimitiveDateTime/3rd ATT/2013-07-26 23:04:14Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2013-07-26 23:04:14Z: Collecting 100 samples in estimated 5.0007 s (19M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2013-07-26 23:04:14Z: Collecting 100 samples in estimated 5.0004 s (19M iterations)
 Benchmarking PrimitiveDateTime/3rd ATT/2013-07-26 23:04:14Z: Analyzing
 PrimitiveDateTime/3rd ATT/2013-07-26 23:04:14Z
-                        time:   [263.58 ns 264.51 ns 265.45 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  1 (1.00%) low mild
+                        time:   [258.84 ns 259.92 ns 261.12 ns]
+                        change: [-2.4369% -1.7402% -1.0324%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) low mild
   4 (4.00%) high mild
   1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/4th ATT/2013-07-26 23:04:14Z
@@ -499,358 +550,433 @@ Benchmarking PrimitiveDateTime/4th ATT/2013-07-26 23:04:14Z: Warming up for 3.00
 Benchmarking PrimitiveDateTime/4th ATT/2013-07-26 23:04:14Z: Collecting 100 samples in estimated 5.0011 s (17M iterations)
 Benchmarking PrimitiveDateTime/4th ATT/2013-07-26 23:04:14Z: Analyzing
 PrimitiveDateTime/4th ATT/2013-07-26 23:04:14Z
-                        time:   [292.21 ns 293.42 ns 294.74 ns]
+                        time:   [289.15 ns 290.40 ns 291.81 ns]
+                        change: [-2.4083% -1.5788% -0.7768%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
 Found 6 outliers among 100 measurements (6.00%)
   2 (2.00%) low mild
-  3 (3.00%) high mild
-  1 (1.00%) high severe
+  4 (4.00%) high mild
 Benchmarking PrimitiveDateTime/1st ATT/2012-06-25 22:03:13.321Z
 Benchmarking PrimitiveDateTime/1st ATT/2012-06-25 22:03:13.321Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2012-06-25 22:03:13.321Z: Collecting 100 samples in estimated 5.0018 s (6.5M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2012-06-25 22:03:13.321Z: Collecting 100 samples in estimated 5.0036 s (6.5M iterations)
 Benchmarking PrimitiveDateTime/1st ATT/2012-06-25 22:03:13.321Z: Analyzing
 PrimitiveDateTime/1st ATT/2012-06-25 22:03:13.321Z
-                        time:   [764.01 ns 766.36 ns 768.82 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  3 (3.00%) low mild
-  2 (2.00%) high mild
+                        time:   [754.64 ns 757.13 ns 759.76 ns]
+                        change: [-1.6522% -1.0453% -0.4199%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) low mild
+  6 (6.00%) high mild
   1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/2nd ATT/2012-06-25 22:03:13.321Z
 Benchmarking PrimitiveDateTime/2nd ATT/2012-06-25 22:03:13.321Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2012-06-25 22:03:13.321Z: Collecting 100 samples in estimated 5.0003 s (8.5M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2012-06-25 22:03:13.321Z: Collecting 100 samples in estimated 5.0026 s (8.3M iterations)
 Benchmarking PrimitiveDateTime/2nd ATT/2012-06-25 22:03:13.321Z: Analyzing
 PrimitiveDateTime/2nd ATT/2012-06-25 22:03:13.321Z
-                        time:   [586.00 ns 588.15 ns 590.36 ns]
-Found 9 outliers among 100 measurements (9.00%)
-  4 (4.00%) low mild
-  4 (4.00%) high mild
-  1 (1.00%) high severe
+                        time:   [591.52 ns 594.64 ns 597.83 ns]
+                        change: [-0.2641% +0.5370% +1.3463%] (p = 0.17 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) low mild
+  3 (3.00%) high mild
 Benchmarking PrimitiveDateTime/3rd ATT/2012-06-25 22:03:13.321Z
 Benchmarking PrimitiveDateTime/3rd ATT/2012-06-25 22:03:13.321Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2012-06-25 22:03:13.321Z: Collecting 100 samples in estimated 5.0010 s (18M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2012-06-25 22:03:13.321Z: Collecting 100 samples in estimated 5.0009 s (18M iterations)
 Benchmarking PrimitiveDateTime/3rd ATT/2012-06-25 22:03:13.321Z: Analyzing
 PrimitiveDateTime/3rd ATT/2012-06-25 22:03:13.321Z
-                        time:   [276.81 ns 277.86 ns 278.97 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  4 (4.00%) low mild
-  2 (2.00%) high mild
+                        time:   [273.27 ns 274.24 ns 275.26 ns]
+                        change: [-1.8584% -1.2069% -0.5235%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/4th ATT/2012-06-25 22:03:13.321Z
 Benchmarking PrimitiveDateTime/4th ATT/2012-06-25 22:03:13.321Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2012-06-25 22:03:13.321Z: Collecting 100 samples in estimated 5.0001 s (16M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2012-06-25 22:03:13.321Z: Collecting 100 samples in estimated 5.0005 s (16M iterations)
 Benchmarking PrimitiveDateTime/4th ATT/2012-06-25 22:03:13.321Z: Analyzing
 PrimitiveDateTime/4th ATT/2012-06-25 22:03:13.321Z
-                        time:   [308.63 ns 309.60 ns 310.65 ns]
-Found 7 outliers among 100 measurements (7.00%)
-  1 (1.00%) low severe
+                        time:   [306.25 ns 307.65 ns 309.28 ns]
+                        change: [-1.3816% -0.6628% +0.0708%] (p = 0.09 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
   2 (2.00%) low mild
   4 (4.00%) high mild
+  2 (2.00%) high severe
 Benchmarking PrimitiveDateTime/1st ATT/2014-08-27T00:05
 Benchmarking PrimitiveDateTime/1st ATT/2014-08-27T00:05: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2014-08-27T00:05: Collecting 100 samples in estimated 5.0011 s (10M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2014-08-27T00:05: Collecting 100 samples in estimated 5.0024 s (10M iterations)
 Benchmarking PrimitiveDateTime/1st ATT/2014-08-27T00:05: Analyzing
 PrimitiveDateTime/1st ATT/2014-08-27T00:05
-                        time:   [491.34 ns 493.13 ns 495.11 ns]
-Found 11 outliers among 100 measurements (11.00%)
-  6 (6.00%) low mild
-  5 (5.00%) high mild
+                        time:   [487.39 ns 489.27 ns 491.43 ns]
+                        change: [-1.1938% -0.5497% +0.0609%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/2nd ATT/2014-08-27T00:05
 Benchmarking PrimitiveDateTime/2nd ATT/2014-08-27T00:05: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2014-08-27T00:05: Collecting 100 samples in estimated 5.0003 s (8.1M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2014-08-27T00:05: Collecting 100 samples in estimated 5.0008 s (7.9M iterations)
 Benchmarking PrimitiveDateTime/2nd ATT/2014-08-27T00:05: Analyzing
 PrimitiveDateTime/2nd ATT/2014-08-27T00:05
-                        time:   [613.12 ns 616.62 ns 620.77 ns]
-Found 5 outliers among 100 measurements (5.00%)
+                        time:   [620.14 ns 622.95 ns 625.91 ns]
+                        change: [-0.0758% +0.6256% +1.2995%] (p = 0.09 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  5 (5.00%) low mild
   4 (4.00%) high mild
-  1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/3rd ATT/2014-08-27T00:05
 Benchmarking PrimitiveDateTime/3rd ATT/2014-08-27T00:05: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2014-08-27T00:05: Collecting 100 samples in estimated 5.0001 s (18M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2014-08-27T00:05: Collecting 100 samples in estimated 5.0002 s (18M iterations)
 Benchmarking PrimitiveDateTime/3rd ATT/2014-08-27T00:05: Analyzing
 PrimitiveDateTime/3rd ATT/2014-08-27T00:05
-                        time:   [271.50 ns 272.43 ns 273.46 ns]
-Found 9 outliers among 100 measurements (9.00%)
-  2 (2.00%) low mild
-  5 (5.00%) high mild
-  2 (2.00%) high severe
+                        time:   [269.52 ns 270.94 ns 272.71 ns]
+                        change: [-1.7197% -0.9748% -0.2393%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) low mild
+  1 (1.00%) high mild
+  3 (3.00%) high severe
 Benchmarking PrimitiveDateTime/4th ATT/2014-08-27T00:05
 Benchmarking PrimitiveDateTime/4th ATT/2014-08-27T00:05: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2014-08-27T00:05: Collecting 100 samples in estimated 5.0010 s (22M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2014-08-27T00:05: Collecting 100 samples in estimated 5.0008 s (22M iterations)
 Benchmarking PrimitiveDateTime/4th ATT/2014-08-27T00:05: Analyzing
 PrimitiveDateTime/4th ATT/2014-08-27T00:05
-                        time:   [230.06 ns 231.71 ns 234.02 ns]
-Found 5 outliers among 100 measurements (5.00%)
+                        time:   [227.96 ns 228.66 ns 229.42 ns]
+                        change: [-1.6662% -0.9356% -0.1850%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
   2 (2.00%) low mild
-  1 (1.00%) high mild
-  2 (2.00%) high severe
+  4 (4.00%) high mild
+  1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/1st ATT/2008-02-21T18:59Z
 Benchmarking PrimitiveDateTime/1st ATT/2008-02-21T18:59Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2008-02-21T18:59Z: Collecting 100 samples in estimated 5.0010 s (5.1M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2008-02-21T18:59Z: Collecting 100 samples in estimated 5.0040 s (5.1M iterations)
 Benchmarking PrimitiveDateTime/1st ATT/2008-02-21T18:59Z: Analyzing
 PrimitiveDateTime/1st ATT/2008-02-21T18:59Z
-                        time:   [975.37 ns 979.05 ns 983.02 ns]
+                        time:   [966.42 ns 969.81 ns 973.64 ns]
+                        change: [-1.7534% -1.0723% -0.4446%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) low mild
+  4 (4.00%) high mild
+  1 (1.00%) high severe
+Benchmarking PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z
+Benchmarking PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z: Collecting 100 samples in estimated 5.0029 s (7.8M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z: Analyzing
+PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z
+                        time:   [616.10 ns 618.15 ns 620.28 ns]
+                        change: [-1.5003% -0.7390% +0.0420%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) low mild
+  4 (4.00%) high mild
+  1 (1.00%) high severe
+Benchmarking PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z
+Benchmarking PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z: Collecting 100 samples in estimated 5.0012 s (18M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z: Analyzing
+PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z
+                        time:   [276.14 ns 276.77 ns 277.39 ns]
+                        change: [-2.0243% -1.4345% -0.8625%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) low mild
+  3 (3.00%) high mild
+Benchmarking PrimitiveDateTime/4th ATT/2008-02-21T18:59Z
+Benchmarking PrimitiveDateTime/4th ATT/2008-02-21T18:59Z: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/4th ATT/2008-02-21T18:59Z: Collecting 100 samples in estimated 5.0010 s (21M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2008-02-21T18:59Z: Analyzing
+PrimitiveDateTime/4th ATT/2008-02-21T18:59Z
+                        time:   [236.43 ns 237.33 ns 238.30 ns]
+                        change: [-1.8947% -0.9554% +0.0638%] (p = 0.05 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+Benchmarking PrimitiveDateTime/1st ATT/2016-10-29T02:07:17
+Benchmarking PrimitiveDateTime/1st ATT/2016-10-29T02:07:17: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/1st ATT/2016-10-29T02:07:17: Collecting 100 samples in estimated 5.0014 s (15M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2016-10-29T02:07:17: Analyzing
+PrimitiveDateTime/1st ATT/2016-10-29T02:07:17
+                        time:   [321.87 ns 322.83 ns 323.84 ns]
+                        change: [-2.0941% -1.4881% -0.8817%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17
+Benchmarking PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17: Collecting 100 samples in estimated 5.0032 s (7.8M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17: Analyzing
+PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17
+                        time:   [631.84 ns 634.60 ns 637.36 ns]
+                        change: [+0.6252% +1.2861% +2.0145%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  4 (4.00%) low mild
+  1 (1.00%) high mild
+Benchmarking PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17
+Benchmarking PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17: Collecting 100 samples in estimated 5.0011 s (18M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17: Analyzing
+PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17
+                        time:   [271.77 ns 273.72 ns 276.53 ns]
+                        change: [-1.7438% -1.0056% -0.1929%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
 Found 9 outliers among 100 measurements (9.00%)
   3 (3.00%) low mild
   4 (4.00%) high mild
   2 (2.00%) high severe
-Benchmarking PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z
-Benchmarking PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z: Collecting 100 samples in estimated 5.0019 s (8.0M iterations)
-Benchmarking PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z: Analyzing
-PrimitiveDateTime/2nd ATT/2008-02-21T18:59Z
-                        time:   [619.04 ns 620.97 ns 623.02 ns]
-Found 9 outliers among 100 measurements (9.00%)
-  1 (1.00%) low severe
-  4 (4.00%) low mild
-  2 (2.00%) high mild
-  2 (2.00%) high severe
-Benchmarking PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z
-Benchmarking PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z: Collecting 100 samples in estimated 5.0008 s (18M iterations)
-Benchmarking PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z: Analyzing
-PrimitiveDateTime/3rd ATT/2008-02-21T18:59Z
-                        time:   [279.91 ns 280.71 ns 281.51 ns]
-Found 9 outliers among 100 measurements (9.00%)
-  6 (6.00%) low mild
-  2 (2.00%) high mild
-  1 (1.00%) high severe
-Benchmarking PrimitiveDateTime/4th ATT/2008-02-21T18:59Z
-Benchmarking PrimitiveDateTime/4th ATT/2008-02-21T18:59Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2008-02-21T18:59Z: Collecting 100 samples in estimated 5.0000 s (21M iterations)
-Benchmarking PrimitiveDateTime/4th ATT/2008-02-21T18:59Z: Analyzing
-PrimitiveDateTime/4th ATT/2008-02-21T18:59Z
-                        time:   [239.19 ns 240.08 ns 241.17 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  1 (1.00%) low mild
-  5 (5.00%) high mild
-  2 (2.00%) high severe
-Benchmarking PrimitiveDateTime/1st ATT/2016-10-29T02:07:17
-Benchmarking PrimitiveDateTime/1st ATT/2016-10-29T02:07:17: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2016-10-29T02:07:17: Collecting 100 samples in estimated 5.0008 s (15M iterations)
-Benchmarking PrimitiveDateTime/1st ATT/2016-10-29T02:07:17: Analyzing
-PrimitiveDateTime/1st ATT/2016-10-29T02:07:17
-                        time:   [325.82 ns 326.83 ns 327.84 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  1 (1.00%) low mild
-  2 (2.00%) high mild
-  1 (1.00%) high severe
-Benchmarking PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17
-Benchmarking PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17: Collecting 100 samples in estimated 5.0025 s (8.0M iterations)
-Benchmarking PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17: Analyzing
-PrimitiveDateTime/2nd ATT/2016-10-29T02:07:17
-                        time:   [623.47 ns 625.87 ns 628.36 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  1 (1.00%) low mild
-  1 (1.00%) high mild
-  2 (2.00%) high severe
-Benchmarking PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17
-Benchmarking PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17: Collecting 100 samples in estimated 5.0004 s (18M iterations)
-Benchmarking PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17: Analyzing
-PrimitiveDateTime/3rd ATT/2016-10-29T02:07:17
-                        time:   [275.34 ns 276.37 ns 277.41 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  1 (1.00%) low mild
-  3 (3.00%) high mild
 Benchmarking PrimitiveDateTime/4th ATT/2016-10-29T02:07:17
 Benchmarking PrimitiveDateTime/4th ATT/2016-10-29T02:07:17: Warming up for 3.0000 s
 Benchmarking PrimitiveDateTime/4th ATT/2016-10-29T02:07:17: Collecting 100 samples in estimated 5.0005 s (21M iterations)
 Benchmarking PrimitiveDateTime/4th ATT/2016-10-29T02:07:17: Analyzing
 PrimitiveDateTime/4th ATT/2016-10-29T02:07:17
-                        time:   [234.70 ns 235.59 ns 236.52 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  4 (4.00%) low mild
-  1 (1.00%) high mild
-  1 (1.00%) high severe
+                        time:   [233.06 ns 233.86 ns 234.67 ns]
+                        change: [-1.2389% -0.6372% -0.0208%] (p = 0.04 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
 Benchmarking PrimitiveDateTime/1st ATT/2010-04-23T20:01:11Z
 Benchmarking PrimitiveDateTime/1st ATT/2010-04-23T20:01:11Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2010-04-23T20:01:11Z: Collecting 100 samples in estimated 5.0004 s (6.0M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2010-04-23T20:01:11Z: Collecting 100 samples in estimated 5.0037 s (6.0M iterations)
 Benchmarking PrimitiveDateTime/1st ATT/2010-04-23T20:01:11Z: Analyzing
 PrimitiveDateTime/1st ATT/2010-04-23T20:01:11Z
-                        time:   [823.92 ns 826.72 ns 829.59 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  3 (3.00%) low mild
+                        time:   [816.40 ns 819.77 ns 823.27 ns]
+                        change: [-1.4939% -0.8195% -0.1740%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) low mild
   2 (2.00%) high mild
-  1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/2nd ATT/2010-04-23T20:01:11Z
 Benchmarking PrimitiveDateTime/2nd ATT/2010-04-23T20:01:11Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2010-04-23T20:01:11Z: Collecting 100 samples in estimated 5.0030 s (7.9M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2010-04-23T20:01:11Z: Collecting 100 samples in estimated 5.0020 s (7.7M iterations)
 Benchmarking PrimitiveDateTime/2nd ATT/2010-04-23T20:01:11Z: Analyzing
 PrimitiveDateTime/2nd ATT/2010-04-23T20:01:11Z
-                        time:   [625.52 ns 627.63 ns 629.79 ns]
-Found 3 outliers among 100 measurements (3.00%)
-  2 (2.00%) high mild
+                        time:   [623.12 ns 626.40 ns 630.26 ns]
+                        change: [-0.8131% -0.0049% +0.9121%] (p = 0.99 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high mild
   1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/3rd ATT/2010-04-23T20:01:11Z
 Benchmarking PrimitiveDateTime/3rd ATT/2010-04-23T20:01:11Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2010-04-23T20:01:11Z: Collecting 100 samples in estimated 5.0003 s (18M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2010-04-23T20:01:11Z: Collecting 100 samples in estimated 5.0009 s (18M iterations)
 Benchmarking PrimitiveDateTime/3rd ATT/2010-04-23T20:01:11Z: Analyzing
 PrimitiveDateTime/3rd ATT/2010-04-23T20:01:11Z
-                        time:   [276.68 ns 277.57 ns 278.50 ns]
+                        time:   [274.42 ns 275.35 ns 276.42 ns]
+                        change: [-2.0321% -1.3314% -0.6816%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z
+Benchmarking PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z: Collecting 100 samples in estimated 5.0008 s (21M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z: Analyzing
+PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z
+                        time:   [233.59 ns 234.45 ns 235.34 ns]
+                        change: [-1.4911% -0.8147% -0.1877%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+Benchmarking PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432
+Benchmarking PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432: Collecting 100 samples in estimated 5.0013 s (11M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432: Analyzing
+PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432
+                        time:   [436.37 ns 440.00 ns 444.24 ns]
+                        change: [-1.3744% -0.5365% +0.2883%] (p = 0.20 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+Benchmarking PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432
+Benchmarking PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432: Collecting 100 samples in estimated 5.0022 s (7.5M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432: Analyzing
+PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432
+                        time:   [639.21 ns 642.24 ns 645.25 ns]
+                        change: [-0.7933% -0.0743% +0.6331%] (p = 0.84 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  4 (4.00%) low mild
+  1 (1.00%) high severe
+Benchmarking PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432
+Benchmarking PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432: Collecting 100 samples in estimated 5.0005 s (18M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432: Analyzing
+PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432
+                        time:   [274.31 ns 275.34 ns 276.44 ns]
+                        change: [-3.2156% -2.4851% -1.8111%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432
+Benchmarking PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432: Collecting 100 samples in estimated 5.0008 s (20M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432: Analyzing
+PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432
+                        time:   [234.10 ns 234.85 ns 235.61 ns]
+                        change: [-3.5343% -2.4066% -1.3851%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z
+Benchmarking PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z: Collecting 100 samples in estimated 5.0010 s (5.1M iterations)
+Benchmarking PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z: Analyzing
+PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z
+                        time:   [948.08 ns 952.45 ns 957.10 ns]
+                        change: [-1.8954% -1.3320% -0.7288%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+Benchmarking PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z
+Benchmarking PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z: Collecting 100 samples in estimated 5.0025 s (7.5M iterations)
+Benchmarking PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z: Analyzing
+PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z
+                        time:   [648.26 ns 651.32 ns 654.72 ns]
+                        change: [-1.3082% -0.0400% +1.0027%] (p = 0.95 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high mild
+Benchmarking PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z
+Benchmarking PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z: Warming up for 3.0000 s
+Benchmarking PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z: Collecting 100 samples in estimated 5.0006 s (18M iterations)
+Benchmarking PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z: Analyzing
+PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z
+                        time:   [275.89 ns 276.78 ns 277.77 ns]
+                        change: [-2.6540% -1.9397% -1.1950%] (p = 0.00 < 0.05)
+                        Performance has improved.
 Found 9 outliers among 100 measurements (9.00%)
   1 (1.00%) low mild
   7 (7.00%) high mild
   1 (1.00%) high severe
-Benchmarking PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z
-Benchmarking PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z: Collecting 100 samples in estimated 5.0004 s (21M iterations)
-Benchmarking PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z: Analyzing
-PrimitiveDateTime/4th ATT/2010-04-23T20:01:11Z
-                        time:   [235.26 ns 236.11 ns 237.03 ns]
-Found 7 outliers among 100 measurements (7.00%)
-  4 (4.00%) low mild
-  3 (3.00%) high mild
-Benchmarking PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432
-Benchmarking PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432: Collecting 100 samples in estimated 5.0010 s (11M iterations)
-Benchmarking PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432: Analyzing
-PrimitiveDateTime/1st ATT/2015-09-28T01:06:16.432
-                        time:   [437.49 ns 439.11 ns 440.92 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  2 (2.00%) low mild
-  2 (2.00%) high severe
-Benchmarking PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432
-Benchmarking PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432: Collecting 100 samples in estimated 5.0002 s (7.8M iterations)
-Benchmarking PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432: Analyzing
-PrimitiveDateTime/2nd ATT/2015-09-28T01:06:16.432
-                        time:   [638.66 ns 640.95 ns 643.24 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  2 (2.00%) low mild
-  1 (1.00%) high mild
-  1 (1.00%) high severe
-Benchmarking PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432
-Benchmarking PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432: Collecting 100 samples in estimated 5.0008 s (18M iterations)
-Benchmarking PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432: Analyzing
-PrimitiveDateTime/3rd ATT/2015-09-28T01:06:16.432
-                        time:   [280.45 ns 282.19 ns 284.15 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  8 (8.00%) high mild
-Benchmarking PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432
-Benchmarking PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432: Collecting 100 samples in estimated 5.0011 s (21M iterations)
-Benchmarking PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432: Analyzing
-PrimitiveDateTime/4th ATT/2015-09-28T01:06:16.432
-                        time:   [238.74 ns 240.90 ns 243.69 ns]
-Found 3 outliers among 100 measurements (3.00%)
-  1 (1.00%) high mild
-  2 (2.00%) high severe
-Benchmarking PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z
-Benchmarking PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z: Collecting 100 samples in estimated 5.0003 s (5.2M iterations)
-Benchmarking PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z: Analyzing
-PrimitiveDateTime/1st ATT/2009-03-22T19:00:10.21Z
-                        time:   [956.74 ns 960.36 ns 964.04 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  1 (1.00%) low mild
-  3 (3.00%) high mild
-Benchmarking PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z
-Benchmarking PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z: Collecting 100 samples in estimated 5.0024 s (7.7M iterations)
-Benchmarking PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z: Analyzing
-PrimitiveDateTime/2nd ATT/2009-03-22T19:00:10.21Z
-                        time:   [643.56 ns 646.96 ns 650.74 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  6 (6.00%) high mild
-  2 (2.00%) high severe
-Benchmarking PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z
-Benchmarking PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z: Collecting 100 samples in estimated 5.0004 s (18M iterations)
-Benchmarking PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z: Analyzing
-PrimitiveDateTime/3rd ATT/2009-03-22T19:00:10.21Z
-                        time:   [281.25 ns 282.47 ns 283.77 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  3 (3.00%) low mild
-  4 (4.00%) high mild
-  1 (1.00%) high severe
 Benchmarking PrimitiveDateTime/4th ATT/2009-03-22T19:00:10.21Z
 Benchmarking PrimitiveDateTime/4th ATT/2009-03-22T19:00:10.21Z: Warming up for 3.0000 s
-Benchmarking PrimitiveDateTime/4th ATT/2009-03-22T19:00:10.21Z: Collecting 100 samples in estimated 5.0007 s (21M iterations)
+Benchmarking PrimitiveDateTime/4th ATT/2009-03-22T19:00:10.21Z: Collecting 100 samples in estimated 5.0007 s (20M iterations)
 Benchmarking PrimitiveDateTime/4th ATT/2009-03-22T19:00:10.21Z: Analyzing
 PrimitiveDateTime/4th ATT/2009-03-22T19:00:10.21Z
-                        time:   [238.44 ns 239.38 ns 240.41 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  2 (2.00%) low mild
-  4 (4.00%) high mild
-  2 (2.00%) high severe
+                        time:   [237.00 ns 237.93 ns 239.02 ns]
+                        change: [-1.6449% -0.9876% -0.3228%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  6 (6.00%) low mild
+  5 (5.00%) high mild
+  1 (1.00%) high severe
 
 Benchmarking Time/1st ATT/20:45:31.133
 Benchmarking Time/1st ATT/20:45:31.133: Warming up for 3.0000 s
-Benchmarking Time/1st ATT/20:45:31.133: Collecting 100 samples in estimated 5.0002 s (40M iterations)
+Benchmarking Time/1st ATT/20:45:31.133: Collecting 100 samples in estimated 5.0003 s (38M iterations)
 Benchmarking Time/1st ATT/20:45:31.133: Analyzing
 Time/1st ATT/20:45:31.133
-                        time:   [123.62 ns 124.29 ns 125.26 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  3 (3.00%) low mild
-  2 (2.00%) high mild
+                        time:   [122.45 ns 122.97 ns 123.59 ns]
+                        change: [-2.1944% -0.8130% +0.5066%] (p = 0.27 > 0.05)
+                        No change in performance detected.
+Found 11 outliers among 100 measurements (11.00%)
+  4 (4.00%) low mild
+  4 (4.00%) high mild
   3 (3.00%) high severe
 Benchmarking Time/2nd ATT/20:45:31.133
 Benchmarking Time/2nd ATT/20:45:31.133: Warming up for 3.0000 s
-Benchmarking Time/2nd ATT/20:45:31.133: Collecting 100 samples in estimated 5.0009 s (29M iterations)
+Benchmarking Time/2nd ATT/20:45:31.133: Collecting 100 samples in estimated 5.0008 s (29M iterations)
 Benchmarking Time/2nd ATT/20:45:31.133: Analyzing
 Time/2nd ATT/20:45:31.133
-                        time:   [171.16 ns 171.69 ns 172.25 ns]
-Found 9 outliers among 100 measurements (9.00%)
-  7 (7.00%) low mild
-  2 (2.00%) high mild
+                        time:   [168.93 ns 169.49 ns 170.08 ns]
+                        change: [-1.3870% -0.8043% -0.2036%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) low mild
+  3 (3.00%) high mild
 Benchmarking Time/3rd ATT/20:45:31.133
 Benchmarking Time/3rd ATT/20:45:31.133: Warming up for 3.0000 s
-Benchmarking Time/3rd ATT/20:45:31.133: Collecting 100 samples in estimated 5.0001 s (67M iterations)
+Benchmarking Time/3rd ATT/20:45:31.133: Collecting 100 samples in estimated 5.0000 s (67M iterations)
 Benchmarking Time/3rd ATT/20:45:31.133: Analyzing
 Time/3rd ATT/20:45:31.133
-                        time:   [73.866 ns 74.179 ns 74.530 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  4 (4.00%) low mild
-  1 (1.00%) high mild
-  1 (1.00%) high severe
-Benchmarking Time/1st ATT/21:46:32
-Benchmarking Time/1st ATT/21:46:32: Warming up for 3.0000 s
-Benchmarking Time/1st ATT/21:46:32: Collecting 100 samples in estimated 5.0001 s (85M iterations)
-Benchmarking Time/1st ATT/21:46:32: Analyzing
-Time/1st ATT/21:46:32   time:   [57.634 ns 57.837 ns 58.062 ns]
-Found 6 outliers among 100 measurements (6.00%)
-  1 (1.00%) low mild
-  3 (3.00%) high mild
-  2 (2.00%) high severe
-Benchmarking Time/2nd ATT/21:46:32
-Benchmarking Time/2nd ATT/21:46:32: Warming up for 3.0000 s
-Benchmarking Time/2nd ATT/21:46:32: Collecting 100 samples in estimated 5.0005 s (32M iterations)
-Benchmarking Time/2nd ATT/21:46:32: Analyzing
-Time/2nd ATT/21:46:32   time:   [156.62 ns 157.27 ns 157.95 ns]
+                        time:   [73.321 ns 73.580 ns 73.850 ns]
+                        change: [-1.3447% -0.7222% -0.0757%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
 Found 7 outliers among 100 measurements (7.00%)
   3 (3.00%) low mild
   2 (2.00%) high mild
   2 (2.00%) high severe
+Benchmarking Time/1st ATT/21:46:32
+Benchmarking Time/1st ATT/21:46:32: Warming up for 3.0000 s
+Benchmarking Time/1st ATT/21:46:32: Collecting 100 samples in estimated 5.0003 s (84M iterations)
+Benchmarking Time/1st ATT/21:46:32: Analyzing
+Time/1st ATT/21:46:32   time:   [57.403 ns 57.562 ns 57.729 ns]
+                        change: [-1.4189% -0.7438% -0.1393%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  4 (4.00%) low mild
+  1 (1.00%) high mild
+Benchmarking Time/2nd ATT/21:46:32
+Benchmarking Time/2nd ATT/21:46:32: Warming up for 3.0000 s
+Benchmarking Time/2nd ATT/21:46:32: Collecting 100 samples in estimated 5.0004 s (31M iterations)
+Benchmarking Time/2nd ATT/21:46:32: Analyzing
+Time/2nd ATT/21:46:32   time:   [154.94 ns 155.48 ns 156.09 ns]
+                        change: [-3.0848% -1.7977% -0.8674%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) low mild
+  3 (3.00%) high mild
 Benchmarking Time/3rd ATT/21:46:32
 Benchmarking Time/3rd ATT/21:46:32: Warming up for 3.0000 s
-Benchmarking Time/3rd ATT/21:46:32: Collecting 100 samples in estimated 5.0005 s (35M iterations)
+Benchmarking Time/3rd ATT/21:46:32: Collecting 100 samples in estimated 5.0006 s (34M iterations)
 Benchmarking Time/3rd ATT/21:46:32: Analyzing
-Time/3rd ATT/21:46:32   time:   [141.95 ns 142.62 ns 143.35 ns]
-Found 10 outliers among 100 measurements (10.00%)
-  4 (4.00%) low mild
-  6 (6.00%) high mild
-Benchmarking Time/1st ATT/19:44
-Benchmarking Time/1st ATT/19:44: Warming up for 3.0000 s
-Benchmarking Time/1st ATT/19:44: Collecting 100 samples in estimated 5.0001 s (39M iterations)
-Benchmarking Time/1st ATT/19:44: Analyzing
-Time/1st ATT/19:44      time:   [127.07 ns 127.84 ns 128.82 ns]
-Found 1 outliers among 100 measurements (1.00%)
-  1 (1.00%) high severe
-Benchmarking Time/2nd ATT/19:44
-Benchmarking Time/2nd ATT/19:44: Warming up for 3.0000 s
-Benchmarking Time/2nd ATT/19:44: Collecting 100 samples in estimated 5.0000 s (35M iterations)
-Benchmarking Time/2nd ATT/19:44: Analyzing
-Time/2nd ATT/19:44      time:   [141.91 ns 142.45 ns 143.01 ns]
-Found 4 outliers among 100 measurements (4.00%)
-  2 (2.00%) high mild
-  2 (2.00%) high severe
-Benchmarking Time/3rd ATT/19:44
-Benchmarking Time/3rd ATT/19:44: Warming up for 3.0000 s
-Benchmarking Time/3rd ATT/19:44: Collecting 100 samples in estimated 5.0002 s (40M iterations)
-Benchmarking Time/3rd ATT/19:44: Analyzing
-Time/3rd ATT/19:44      time:   [124.28 ns 124.72 ns 125.18 ns]
-Found 8 outliers among 100 measurements (8.00%)
-  4 (4.00%) low mild
+Time/3rd ATT/21:46:32   time:   [141.79 ns 142.87 ns 144.07 ns]
+                        change: [-1.2672% -0.5594% +0.1361%] (p = 0.12 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) low mild
   3 (3.00%) high mild
   1 (1.00%) high severe
+Benchmarking Time/1st ATT/19:44
+Benchmarking Time/1st ATT/19:44: Warming up for 3.0000 s
+Benchmarking Time/1st ATT/19:44: Collecting 100 samples in estimated 5.0005 s (37M iterations)
+Benchmarking Time/1st ATT/19:44: Analyzing
+Time/1st ATT/19:44      time:   [124.52 ns 125.05 ns 125.63 ns]
+                        change: [-2.0378% -1.4082% -0.7611%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+Benchmarking Time/2nd ATT/19:44
+Benchmarking Time/2nd ATT/19:44: Warming up for 3.0000 s
+Benchmarking Time/2nd ATT/19:44: Collecting 100 samples in estimated 5.0003 s (33M iterations)
+Benchmarking Time/2nd ATT/19:44: Analyzing
+Time/2nd ATT/19:44      time:   [140.30 ns 141.03 ns 141.88 ns]
+                        change: [-1.8151% +1.4601% +7.4736%] (p = 0.72 > 0.05)
+                        No change in performance detected.
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) low mild
+  3 (3.00%) high mild
+  5 (5.00%) high severe
+Benchmarking Time/3rd ATT/19:44
+Benchmarking Time/3rd ATT/19:44: Warming up for 3.0000 s
+Benchmarking Time/3rd ATT/19:44: Collecting 100 samples in estimated 5.0002 s (38M iterations)
+Benchmarking Time/3rd ATT/19:44: Analyzing
+Time/3rd ATT/19:44      time:   [123.33 ns 124.01 ns 124.77 ns]
+                        change: [-0.7136% +0.0034% +0.8060%] (p = 0.99 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  5 (5.00%) high mild
+  2 (2.00%) high severe
 

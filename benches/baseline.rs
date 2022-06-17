@@ -8,7 +8,7 @@ use time::macros::format_description as fd;
 use time::*;
 
 fn bench_time_parsing(c: &mut Criterion) {
-    let mut group = c.benchmark_group("Time");
+    let mut group = c.benchmark_group("Baseline");
     group.bench_function("H:M", |b| {
         b.iter(|| Time::parse(black_box("19:44"), fd!("[hour]:[minute]")));
     });
