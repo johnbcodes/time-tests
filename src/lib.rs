@@ -1,8 +1,13 @@
 pub mod first {
+    use time::format_description::well_known::Rfc3339;
     use time::macros::format_description as fd;
     use time::{OffsetDateTime, PrimitiveDateTime, Time};
 
     pub fn odt_attempt(offset_date_time_string: &str) -> Option<OffsetDateTime> {
+        if let Ok(dt) = OffsetDateTime::parse(offset_date_time_string, &Rfc3339) {
+            return Some(dt);
+        }
+
         let sqlite_datetime_formats = &[
             fd!("[year]-[month]-[day] [hour]:[minute]:[second][offset_hour sign:mandatory]:[offset_minute]"),
             fd!("[year]-[month]-[day] [hour]:[minute]:[second].[subsecond][offset_hour sign:mandatory]:[offset_minute]"),
@@ -124,13 +129,18 @@ pub mod second {
     }
 }
 
-#[cfg(feature = "third-attempt")]
 pub mod third {
-
-    use time::format_description::{modifier, Component::*, FormatItem, FormatItem::*};
-    use time::{error::Parse, format_description, OffsetDateTime, PrimitiveDateTime, Time};
+    use super::formats::*;
+    use time::format_description::well_known::Rfc3339;
+    use time::format_description::FormatItem::*;
+    use time::macros::format_description as fd;
+    use time::{error::Parse, OffsetDateTime, PrimitiveDateTime, Time};
 
     pub fn odt_attempt(offset_date_time_string: &str) -> Result<OffsetDateTime, Parse> {
+        if let Ok(dt) = OffsetDateTime::parse(offset_date_time_string, &Rfc3339) {
+            return Ok(dt);
+        }
+
         let formats = [
             Compound(OFFSET_DATE_TIME_SPACE_SEPARATED),
             Compound(OFFSET_DATE_TIME_T_SEPARATED),
@@ -141,6 +151,11 @@ pub mod third {
     }
 
     pub fn pdt_attempt(primitive_date_time_string: &str) -> Result<PrimitiveDateTime, Parse> {
+        let default_format = fd!("[year]-[month]-[day] [hour]:[minute]:[second].[subsecond]");
+        if let Ok(dt) = PrimitiveDateTime::parse(primitive_date_time_string, &default_format) {
+            return Ok(dt);
+        }
+
         let formats = [
             Compound(PRIMITIVE_DATE_TIME_SPACE_SEPARATED),
             Compound(PRIMITIVE_DATE_TIME_T_SEPARATED),
@@ -151,8 +166,42 @@ pub mod third {
     }
 
     pub fn time_attempt(time_string: &str) -> Result<Time, Parse> {
+        let default_format = fd!("[hour]:[minute]:[second].[subsecond]");
+        if let Ok(dt) = Time::parse(time_string, &default_format) {
+            return Ok(dt);
+        }
+
         Time::parse(time_string, TIME_DESCRIPTION)
     }
+}
+
+pub mod fourth {
+    use super::formats::*;
+    use time::format_description::well_known::Rfc3339;
+    use time::macros::format_description as fd;
+    use time::{error::Parse, OffsetDateTime, PrimitiveDateTime};
+
+    pub fn odt_attempt(offset_date_time_string: &str) -> Result<OffsetDateTime, Parse> {
+        if let Ok(dt) = OffsetDateTime::parse(offset_date_time_string, &Rfc3339) {
+            return Ok(dt);
+        }
+
+        OffsetDateTime::parse(offset_date_time_string, OFFSET_DATE_TIME)
+    }
+
+    pub fn pdt_attempt(primitive_date_time_string: &str) -> Result<PrimitiveDateTime, Parse> {
+        let default_format = fd!("[year]-[month]-[day] [hour]:[minute]:[second].[subsecond]");
+        if let Ok(dt) = PrimitiveDateTime::parse(primitive_date_time_string, &default_format) {
+            return Ok(dt);
+        }
+
+        PrimitiveDateTime::parse(primitive_date_time_string, PRIMITIVE_DATE_TIME)
+    }
+}
+
+mod formats {
+    use time::format_description;
+    use time::format_description::{modifier, Component::*, FormatItem, FormatItem::*};
 
     const YEAR: FormatItem = Component(Year({
         let mut value = modifier::Year::default();
@@ -215,7 +264,49 @@ pub mod third {
         value
     });
 
-    const OFFSET_DATE_TIME_SPACE_SEPARATED: &[FormatItem<'_>] = {
+    pub const OFFSET_DATE_TIME: &[FormatItem<'_>] = {
+        &[
+            YEAR,
+            Literal(b"-"),
+            MONTH,
+            Literal(b"-"),
+            DAY,
+            Optional(&Literal(b" ")),
+            Optional(&Literal(b"T")),
+            HOUR,
+            Literal(b":"),
+            MINUTE,
+            Optional(&Literal(b":")),
+            Optional(&Component(SECOND)),
+            Optional(&Literal(b".")),
+            Optional(&Component(SUBSECOND)),
+            Optional(&Component(OFFSET_HOUR)),
+            Optional(&Literal(b":")),
+            Optional(&Component(OFFSET_MINUTE)),
+        ]
+    };
+
+    pub const PRIMITIVE_DATE_TIME: &[FormatItem<'_>] = {
+        &[
+            YEAR,
+            Literal(b"-"),
+            MONTH,
+            Literal(b"-"),
+            DAY,
+            Optional(&Literal(b" ")),
+            Optional(&Literal(b"T")),
+            HOUR,
+            Literal(b":"),
+            MINUTE,
+            Optional(&Literal(b":")),
+            Optional(&Component(SECOND)),
+            Optional(&Literal(b".")),
+            Optional(&Component(SUBSECOND)),
+            Optional(&Literal(b"Z")),
+        ]
+    };
+
+    pub const OFFSET_DATE_TIME_SPACE_SEPARATED: &[FormatItem<'_>] = {
         &[
             YEAR,
             Literal(b"-"),
@@ -236,7 +327,7 @@ pub mod third {
         ]
     };
 
-    const OFFSET_DATE_TIME_T_SEPARATED: &[FormatItem<'_>] = {
+    pub const OFFSET_DATE_TIME_T_SEPARATED: &[FormatItem<'_>] = {
         &[
             YEAR,
             Literal(b"-"),
@@ -257,7 +348,7 @@ pub mod third {
         ]
     };
 
-    const PRIMITIVE_DATE_TIME_SPACE_SEPARATED: &[FormatItem<'_>] = {
+    pub const PRIMITIVE_DATE_TIME_SPACE_SEPARATED: &[FormatItem<'_>] = {
         &[
             YEAR,
             Literal(b"-"),
@@ -276,7 +367,7 @@ pub mod third {
         ]
     };
 
-    const PRIMITIVE_DATE_TIME_T_SEPARATED: &[FormatItem<'_>] = {
+    pub const PRIMITIVE_DATE_TIME_T_SEPARATED: &[FormatItem<'_>] = {
         &[
             YEAR,
             Literal(b"-"),
@@ -295,7 +386,7 @@ pub mod third {
         ]
     };
 
-    const TIME_DESCRIPTION: &[FormatItem<'_>] = {
+    pub const TIME_DESCRIPTION: &[FormatItem<'_>] = {
         &[
             HOUR,
             Literal(b":"),
@@ -310,9 +401,7 @@ pub mod third {
 
 #[cfg(test)]
 mod tests {
-    #[cfg(feature = "third-attempt")]
-    use crate::third;
-    use crate::{first, second};
+    use crate::{first, fourth, second, third};
     use time::macros::{datetime, time};
 
     macro_rules! assert_parsed {
@@ -324,6 +413,10 @@ mod tests {
 
     #[test]
     fn test_odt_first_attempt() {
+        assert_parsed!(
+            first::odt_attempt("2016-03-07T22:36:55.135+03:30"),
+            datetime!(2016-3-7 22:36:55.135+3:30)
+        );
         assert_parsed!(
             first::odt_attempt("2015-11-19 01:01:39+01:00"),
             datetime!(2015-11-19 01:01:39+1)
@@ -345,6 +438,10 @@ mod tests {
     #[test]
     fn test_odt_second_attempt() {
         assert_parsed!(
+            second::odt_attempt("2016-03-07T22:36:55.135+03:30"),
+            datetime!(2016-3-7 22:36:55.135+3:30)
+        );
+        assert_parsed!(
             second::odt_attempt("2015-11-19 01:01:39+01:00"),
             datetime!(2015-11-19 01:01:39+1)
         );
@@ -362,9 +459,12 @@ mod tests {
         );
     }
 
-    #[cfg(feature = "third-attempt")]
     #[test]
     fn test_odt_third_attempt() {
+        assert_parsed!(
+            third::odt_attempt("2016-03-07T22:36:55.135+03:30"),
+            datetime!(2016-3-7 22:36:55.135+3:30)
+        );
         assert_parsed!(
             third::odt_attempt("2015-11-19 01:01:39+01:00"),
             datetime!(2015-11-19 01:01:39+1)
@@ -379,6 +479,30 @@ mod tests {
         );
         assert_parsed!(
             third::odt_attempt("2017-04-11T14:35+02:00"),
+            datetime!(2017-04-11 14:35+2)
+        );
+    }
+
+    #[test]
+    fn test_odt_fourth_attempt() {
+        assert_parsed!(
+            fourth::odt_attempt("2016-03-07T22:36:55.135+03:30"),
+            datetime!(2016-3-7 22:36:55.135+3:30)
+        );
+        assert_parsed!(
+            fourth::odt_attempt("2015-11-19 01:01:39+01:00"),
+            datetime!(2015-11-19 01:01:39+1)
+        );
+        assert_parsed!(
+            fourth::odt_attempt("2014-10-18 00:00:38.697+00:00"),
+            datetime!(2014-10-18 00:00:38.697+0)
+        );
+        assert_parsed!(
+            fourth::odt_attempt("2013-09-17 23:59-01:00"),
+            datetime!(2013-09-17 23:59-1)
+        );
+        assert_parsed!(
+            fourth::odt_attempt("2017-04-11T14:35+02:00"),
             datetime!(2017-04-11 14:35+2)
         );
     }
@@ -487,7 +611,6 @@ mod tests {
         );
     }
 
-    #[cfg(feature = "third-attempt")]
     #[test]
     fn test_pdt_third_attempt() {
         assert_parsed!(
@@ -541,6 +664,58 @@ mod tests {
     }
 
     #[test]
+    fn test_pdt_fourth_attempt() {
+        assert_parsed!(
+            fourth::pdt_attempt("2014-08-27T00:05"),
+            datetime!(2014-08-27 00:05)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2019-01-02 05:10:20"),
+            datetime!(2019-01-02 05:10:20)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2018-12-01 04:09:19.543"),
+            datetime!(2018-12-01 04:09:19.543)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2017-11-30 03:08"),
+            datetime!(2017-11-30 03:08)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2016-10-29T02:07:17"),
+            datetime!(2016-10-29 02:07:17)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2015-09-28T01:06:16.432"),
+            datetime!(2015-09-28 01:06:16.432)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2012-06-25 22:03:13.321Z"),
+            datetime!(2012-06-25 22:03:13.321)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2009-03-22T19:00:10.21Z"),
+            datetime!(2009-03-22 19:00:10.21)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2013-07-26 23:04:14Z"),
+            datetime!(2013-07-26 23:04:14)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2011-05-24 21:02Z"),
+            datetime!(2011-05-24 21:02)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2010-04-23T20:01:11Z"),
+            datetime!(2010-04-23 20:01:11)
+        );
+        assert_parsed!(
+            fourth::pdt_attempt("2008-02-21T18:59Z"),
+            datetime!(2008-02-21 18:59)
+        );
+    }
+
+    #[test]
     fn test_time_first_attempt() {
         assert_parsed!(first::time_attempt("21:46:32"), time!(21:46:32));
         assert_parsed!(first::time_attempt("20:45:31.133"), time!(20:45:31.133));
@@ -554,7 +729,6 @@ mod tests {
         assert_parsed!(second::time_attempt("19:44"), time!(19:44));
     }
 
-    #[cfg(feature = "third-attempt")]
     #[test]
     fn test_time_third_attempt() {
         assert_parsed!(third::time_attempt("21:46:32"), time!(21:46:32));
