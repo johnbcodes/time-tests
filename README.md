@@ -101,6 +101,6 @@ the low number of iterations of small format descriptions.
 ### Potential further research
 
 * Figure out why the "T" separated formats are faster for the `PrimitiveDateTime` fourth iteration.
-* Since we're making decisions on a limited set of format descriptions to support. Performance could be optimized further by using the techniques in `time::format_description::well_known:Rfc3339` and other well-known formats.
+* There is a limited set of format descriptions supported. Performance could be optimized further by using the techniques in `time::format_description::well_known:Rfc3339` and other well-known formats.
 * Is it possible and not convoluted to make the default encoding/decoding formats into compilation features?
   * More likely for user preference than for performance considerations
