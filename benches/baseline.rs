@@ -63,6 +63,9 @@ fn bench_time_parsing(c: &mut Criterion) {
 
         b.iter(|| Time::parse(black_box("20:45:31.133"), DESCRIPTION));
     });
+    // RFC 3339 is way more complex than can be described with format_description! macro and the
+    // following description is just one of the possible matches that can be made with this syntax.
+    // This just further illustrates how much faster the lower-level tools used by Rfc3339 are.
     group.bench_function("RFC 3339 - Format Description", |b| {
         let description = fd!("[year]-[month]-[day]T[hour]:[minute]:[second].[subsecond][offset_hour sign:mandatory]:[offset_minute]");
         b.iter(|| Time::parse(black_box("1937-01-01T12:00:27.87+00:20"), &description));

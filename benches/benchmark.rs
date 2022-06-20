@@ -13,17 +13,17 @@ fn bench_time_parsing(c: &mut Criterion) {
     ]
     .iter()
     {
-        group.bench_with_input(BenchmarkId::new("1st ATT", i), i, |b, i| {
-            b.iter(|| first::odt_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("1st ITER", i), i, |b, i| {
+            b.iter(|| first::odt_iteration(*i))
         });
-        group.bench_with_input(BenchmarkId::new("2nd ATT", i), i, |b, i| {
-            b.iter(|| second::odt_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("2nd ITER", i), i, |b, i| {
+            b.iter(|| second::odt_iteration(*i))
         });
-        group.bench_with_input(BenchmarkId::new("3rd ATT", i), i, |b, i| {
-            b.iter(|| third::odt_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("3rd ITER", i), i, |b, i| {
+            b.iter(|| third::odt_iteration(*i))
         });
-        group.bench_with_input(BenchmarkId::new("4th ATT", i), i, |b, i| {
-            b.iter(|| fourth::odt_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("4th ITER", i), i, |b, i| {
+            b.iter(|| fourth::odt_iteration(*i))
         });
     }
     group.finish();
@@ -45,31 +45,31 @@ fn bench_time_parsing(c: &mut Criterion) {
     ]
     .iter()
     {
-        group.bench_with_input(BenchmarkId::new("1st ATT", i), i, |b, i| {
-            b.iter(|| first::pdt_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("1st ITER", i), i, |b, i| {
+            b.iter(|| first::pdt_iteration(*i))
         });
-        group.bench_with_input(BenchmarkId::new("2nd ATT", i), i, |b, i| {
-            b.iter(|| second::pdt_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("2nd ITER", i), i, |b, i| {
+            b.iter(|| second::pdt_iteration(*i))
         });
-        group.bench_with_input(BenchmarkId::new("3rd ATT", i), i, |b, i| {
-            b.iter(|| third::pdt_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("3rd ITER", i), i, |b, i| {
+            b.iter(|| third::pdt_iteration(*i))
         });
-        group.bench_with_input(BenchmarkId::new("4th ATT", i), i, |b, i| {
-            b.iter(|| fourth::pdt_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("4th ITER", i), i, |b, i| {
+            b.iter(|| fourth::pdt_iteration(*i))
         });
     }
     group.finish();
 
     let mut group = c.benchmark_group("Time");
     for i in ["20:45:31.133", "21:46:32", "19:44"].iter() {
-        group.bench_with_input(BenchmarkId::new("1st ATT", i), i, |b, i| {
-            b.iter(|| first::time_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("1st ITER", i), i, |b, i| {
+            b.iter(|| first::time_iteration(*i))
         });
-        group.bench_with_input(BenchmarkId::new("2nd ATT", i), i, |b, i| {
-            b.iter(|| second::time_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("2nd ITER", i), i, |b, i| {
+            b.iter(|| second::time_iteration(*i))
         });
-        group.bench_with_input(BenchmarkId::new("3rd ATT", i), i, |b, i| {
-            b.iter(|| third::time_attempt(*i))
+        group.bench_with_input(BenchmarkId::new("3rd ITER", i), i, |b, i| {
+            b.iter(|| third::time_iteration(*i))
         });
     }
     group.finish();
