@@ -76,7 +76,7 @@ with "roots" based on whether the separator between the date and time components
 The fourth iteration made the date and time separators optional and therefore condensed each into a single
 description.
 
-![OffsetDateTime] (https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/OffsetDateTime.svg)
+![OffsetDateTime](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/OffsetDateTime.svg)
 
 The performance of both iterations for `OffsetDateTime` seem to show a definitive win for the fourth iteration. While
 one of the descriptions was slightly faster for the third iteration, the fourth iteration had a much better worse-case
