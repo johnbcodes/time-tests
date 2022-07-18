@@ -19,8 +19,9 @@ The [baseline](benches/baseline.rs) benchmark parses various SQLite
 crate techniques: the `format_description!` macro, hand-modified expansion of those macros to
 mark certain literals and components as _optional_, and _well known_ formats like `Rfc3339`.
 
-From the [results](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/Baseline.svg),
-I make several observations in order of obviousness:
+![Baseline](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/Baseline.svg)
+
+From the results, I make several observations in order of obviousness:
 
 1. The more specific the time format (and therefore format description), the more time it takes to parse.
 2. Optional components take more time to parse.
