@@ -10,7 +10,7 @@ Testing machine: Mid 2018 MacBook Pro 13"
                  16GB
 
 NOTE: The violin plots referenced below can be a little tiresome to interpret since the Y-axis is not ordered optimally.
-I didn't spend much time finding a way to order them manually in Criterion.
+I did not find a way to order them manually in Criterion with the time I spent.
 
 ### Baseline Observations
 
@@ -28,12 +28,6 @@ I make several observations in order of obviousness:
 lower-level parsing APIs)
 
 ### Iterations
-
-Violin plots of the different iterations by Time type:
-
-1. [PrimitiveDateTime](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/PrimitiveDateTime.svg)
-2. [OffsetDateTime](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/OffsetDateTime.svg)
-3. [Time](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/Time.svg)
 
 [Implementation code and tests](src/lib.rs)
 
@@ -82,21 +76,25 @@ with "roots" based on whether the separator between the date and time components
 The fourth iteration made the date and time separators optional and therefore condensed each into a single
 description.
 
-The [performance](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/OffsetDateTime.svg) of both
-iterations for `OffsetDateTime` seem to show a definitive win for the fourth iteration. While one of the descriptions
-was slightly faster for the third iteration, the fourth iteration had a much better worse-case performance and as good
-or better performance for the other two.
+![OffsetDateTime] (https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/OffsetDateTime.svg)
 
-The [performance](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/PrimitiveDateTime.svg) for
-`PrimitiveDateTime` makes it more difficult to choose a definitive winner. The third iteration has more consistent and
-better worse-case performance. The fourth iteration has better performance for all variants of the "T" separator except
-for one of the 3rd iteration space separator variants. Conversely, the 4th iteration space separator variants are slower
-than the 3rd iteration. Having a performance decision-making policy and time to perform more math on the numbers would
-be useful. In absence of either I am choosing the third iteration as it is more consistent/less surprising.
+The performance of both iterations for `OffsetDateTime` seem to show a definitive win for the fourth iteration. While
+one of the descriptions was slightly faster for the third iteration, the fourth iteration had a much better worse-case
+performance and as good or better performance for the other two.
 
-For `Time` the third iteration [showed](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/Time.svg)
-no real improvement over the first iteration. I suspect that the performance impact of `FormatItem::Optional` offsets
-the low number of iterations of small format descriptions.
+![PrimitiveDateTime](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/PrimitiveDateTime.svg)
+
+The performance for `PrimitiveDateTime` makes it more difficult to choose a definitive winner. The third iteration has
+more consistent and better worse-case performance. The fourth iteration has better performance for all variants of the
+"T" separator except for one of the 3rd iteration space separator variants. Conversely, the 4th iteration space
+separator variants are slower than the 3rd iteration. Having a performance decision-making policy and time to perform
+more math on the numbers would be useful. In absence of either I am choosing the third iteration as it is more
+consistent/less surprising.
+
+![Time](https://raw.githubusercontent.com/johnbcodes/time-tests/main/images/Time.svg)
+
+For `Time` the third iteration showed no real improvement over the first iteration. I suspect that the performance
+impact of `FormatItem::Optional` offsets the low number of iterations of small format descriptions.
 
 ### Potential further research
 
