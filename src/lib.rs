@@ -179,7 +179,7 @@ pub mod fourth {
     use super::formats::*;
     use time::format_description::well_known::Rfc3339;
     use time::macros::format_description as fd;
-    use time::{error::Parse, OffsetDateTime, PrimitiveDateTime, Time};
+    use time::{error::Parse, OffsetDateTime, PrimitiveDateTime};
 
     pub fn odt_iteration(offset_date_time_string: &str) -> Result<OffsetDateTime, Parse> {
         if let Ok(dt) = OffsetDateTime::parse(offset_date_time_string, &Rfc3339) {
